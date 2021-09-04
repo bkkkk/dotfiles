@@ -7,14 +7,12 @@ tap 'homebrew/bundle'
 tap 'caskroom/fonts'
 
 # Brews
-brew 'stow'
 brew 'zsh'
 brew 'zsh-completions'
 brew 'git'
 brew 'git-delta'
 brew 'gh'
 brew 'libgit2'
-brew 'r'
 brew 'openssl'
 brew 'pkg-config'
 brew 'fzf'
@@ -22,19 +20,11 @@ brew 'fzf'
 cask 'alfred'
 cask 'bartender'
 cask 'discord'
-cask 'docker'
-cask 'google-chrome'
 cask 'iterm2'
 cask 'omnifocus'
-cask 'r-studio'
 cask 'slack'
 cask 'spotify'
 cask 'sublime-text'
-cask 'textexpander'
-
-# Quicklook
-cask 'quicklook-csv'
-cask 'quicklook-json'
 
 # Fonts
 cask 'font-lato'
@@ -46,10 +36,20 @@ cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 
 # Mac App Store
+mas '1Blocker', id: 1365531024
 mas '1Password', id: 1333542190
+mas 'Cardhop', id: 1290358394
+mas 'Craft', id: 1487937127
 mas 'Deliveries', id: 924726344
+mas 'Developer', id: 640199958
 mas 'Divvy', id: 413857545
+mas 'Drafts', id: 1435957248
+mas 'Encounter+', id: 1170693487
 mas 'Fantastical 2', id: 975937182
+mas 'Gifox', id: 1461845568
 mas 'Keynote', id: 409183694
 mas 'LINE', id: 539883307
+mas 'Marked 2', id: 890031187
+mas 'Numbers', id: 409203825
+mas 'Pages', id: 409201541
 mas 'Spark', id: 1176895641
