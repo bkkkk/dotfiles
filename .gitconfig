@@ -1,0 +1,109 @@
+[user]
+    name = Jacob Blanco
+    email = jayb88@gmail.com
+    username = bkkkk
+
+[core]
+    editor = subl -n -w
+    excludesfile = /Users/exco42/.gitignore
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+
+[alias]
+    # Staging
+    a = add
+    aa = add --all
+    patch = add --patch
+
+    # Branch
+    br = branch
+    bd = branch -D
+    branch-name = rev-parse --abbrev-ref HEAD
+    branch-diff = diff master...HEAD
+    prod-diff = describe --tags --match 'v[0-9].[0-9].[0-9]*-production' --abbrev=0 HEAD
+
+    # Commit
+    c = commit
+    ca = commit -a
+    cm = commit -m
+    cam = commit -am
+    amend = commit --amend
+
+    # Checkout
+    co = checkout
+    cb = checkout -b
+
+    # Tags
+    t = tag
+    spray = !"git push --tags"
+    piece = !"git push --tags --force"
+
+    # Diff
+    d = diff --color-words
+    dc = diff --cached
+
+    # Pull
+    yank = pull --force
+
+    # Push
+    shove = push --force
+
+    # Stash
+    st = stash
+    stp = stash pop
+
+    # Cleanup
+    rpo = remote prune origin
+
+    # Status/Logging
+    s = status
+    ss = status -sb
+    l = log --pretty
+    ld = log --pretty=format:'* %s (%an)'
+
+    lg = !"git lg1"
+    lg1 = !"git lg1-specific --all"
+
+    lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+
+    # Reset
+    discard = checkout -- # Discard changes in Working Directory
+    unstage = reset HEAD -- # Move staged changes to Working Dir
+    undo = reset --soft HEAD~1 # Undo last commit (affects HEAD only)
+    destroy = reset --hard HEAD~1 # Remove last commit (from HEAD, Index and Working Dir)
+
+    # Remote
+    r = remote -v
+    prune-all = !git prune & git remote prune origin
+
+    # OneFlow
+    publish = "!git push --set-upstream origin $(git branch-name)"
+    feature = "!feature() { git pull; git checkout -b feature/$1; git publish; }; feature"
+    change = "!change() { git pull; git checkout -b change/$1; git publish; }; change"
+    fix = "!fix() { git pull; git checkout -b fix/$1; git publish; }; fix"
+    release = "!release() { git pull; git checkout -b release/$1; git publish; }; release"
+    role = "!role() { git pull; git checkout -b role/$1; git publish; }; role"
+    finish = !target=$(git rev-parse --abbrev-ref HEAD) && git checkout master && git pull && git branch -D $target && git rpo
+
+    changelog = "!changelog () { git pull --quiet; git --no-pager ld $(git prod-diff)..master; }; changelog"
+
+    
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	rebase = false
