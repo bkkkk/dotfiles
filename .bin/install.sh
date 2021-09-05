@@ -19,10 +19,6 @@ brew bundle
 
 echo "== Setting up Shell Config =="
 source zsh/install.sh
-stow zsh
-
-echo "== Setting up git configuration =="
-stow git
 
 echo "== Setting up MacOS defaults configuration =="
 source .macos
