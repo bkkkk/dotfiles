@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "FILTER(WHERE({cursor}))",
+    "uid" : "35A2697A-E54C-4FD3-B1F2-6799192FDCA0",
+    "name" : "FilterWhere",
+    "keyword" : "fw"
+  }
+}

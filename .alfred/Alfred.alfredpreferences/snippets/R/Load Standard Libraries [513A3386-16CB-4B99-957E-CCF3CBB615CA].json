@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "library(tidyverse)\nlibrary(lubridate)\nlibrary(paidyr)\n",
+    "uid" : "513A3386-16CB-4B99-957E-CCF3CBB615CA",
+    "name" : "Load Standard Libraries",
+    "keyword" : "had"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "R__{date:yyyy-MM-dd}_{cursor}_X.sql",
+    "uid" : "D576F2BB-6413-42B4-8807-CE137F1238C2",
+    "name" : "Repeatable",
+    "keyword" : "r"
+  }
+}

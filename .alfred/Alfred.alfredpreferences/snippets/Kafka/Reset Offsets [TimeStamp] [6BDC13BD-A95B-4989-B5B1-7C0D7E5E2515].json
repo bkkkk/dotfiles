@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "kafka-consumer-groups --bootstrap-server 10.226.149.69:9092 --group {cursor} HERE --topic TOPIC_HERE --command-config \/opt\/kafka\/kafka.properties --reset-offsets --to-datetime TIMESTAMP --execute\n\n",
+    "uid" : "6BDC13BD-A95B-4989-B5B1-7C0D7E5E2515",
+    "name" : "Reset Offsets [TimeStamp]",
+    "keyword" : "ktreset"
+  }
+}

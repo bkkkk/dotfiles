@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "{snippet:rhad}\n\nmy_source <- db_source(get_credentials())\n\nblorgs <- sql(\"{clipboard}\") %>%\n  tbl(src = my_source) %>%\n  mimir_collect(n = Inf)",
+    "uid" : "9D934142-9F6E-4CD5-83F7-DA2BCE8FE56F",
+    "name" : "Grab SQL Data",
+    "keyword" : "grab"
+  }
+}

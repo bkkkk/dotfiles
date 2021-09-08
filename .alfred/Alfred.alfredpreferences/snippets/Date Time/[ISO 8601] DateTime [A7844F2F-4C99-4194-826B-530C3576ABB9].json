@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "{date:yyyy-MM-dd'T'HH:mm:ssZZZZZ}",
+    "uid" : "A7844F2F-4C99-4194-826B-530C3576ABB9",
+    "name" : "[ISO 8601] DateTime",
+    "keyword" : "edt"
+  }
+}

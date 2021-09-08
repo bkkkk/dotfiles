@@ -8,6 +8,7 @@
 		<string>Internet</string>
 		<string>Productivity</string>
 		<string>Kafka</string>
+		<string>Work Only</string>
 	</array>
 	<key>showAlignmentGuides</key>
 	<true/>

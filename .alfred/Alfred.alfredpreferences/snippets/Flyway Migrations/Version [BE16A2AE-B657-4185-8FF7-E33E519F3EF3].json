@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "V{date:yyyy-MM-dd}.V{cursor}__.sql",
+    "uid" : "BE16A2AE-B657-4185-8FF7-E33E519F3EF3",
+    "name" : "Version",
+    "keyword" : "v"
+  }
+}

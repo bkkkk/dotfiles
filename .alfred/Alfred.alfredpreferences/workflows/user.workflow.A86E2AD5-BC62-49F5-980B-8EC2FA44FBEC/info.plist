@@ -5,7 +5,7 @@
 	<key>bundleid</key>
 	<string></string>
 	<key>category</key>
-	<string>Kafka</string>
+	<string>Work Only</string>
 	<key>connections</key>
 	<dict>
 		<key>13667EA6-70E8-46DA-B3E4-81D14F1CD11E</key>
@@ -216,19 +216,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>focusedappvariable</key>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>kafka_consumer_groups --bootstap {var:bootstrap_server} --topic {var:topic_name} --group-name {var:group_name} --reset-offset --to-timestamp {var:timestamp}</string>
+				<key>ignoredynamicplaceholders</key>
 				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>keyword</key>
-				<string>treset</string>
+				<key>transient</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.snippet</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>48D10300-E256-4282-BCE0-7F6FA67CAA04</string>
+			<string>462A8ADE-CD34-4712-9FD4-F664A82D72BF</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -252,21 +254,19 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>kafka_consumer_groups --bootstap {var:bootstrap_server} --topic {var:topic_name} --group-name {var:group_name} --reset-offset --to-timestamp {var:timestamp}</string>
-				<key>ignoredynamicplaceholders</key>
+				<key>focusedappvariable</key>
 				<false/>
-				<key>transient</key>
-				<true/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>keyword</key>
+				<string>treset</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
+			<string>alfred.workflow.trigger.snippet</string>
 			<key>uid</key>
-			<string>462A8ADE-CD34-4712-9FD4-F664A82D72BF</string>
+			<string>48D10300-E256-4282-BCE0-7F6FA67CAA04</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -369,6 +369,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>keyword</key>
+				<string>ereset</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.snippet</string>
+			<key>uid</key>
+			<string>C42E99F9-361D-40C5-8106-CE069D186F2A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>autopaste</key>
 				<true/>
 				<key>clipboardtext</key>
@@ -384,23 +401,6 @@
 			<string>E17C7CAE-BC85-4873-B636-06BB4C7C33CD</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>keyword</key>
-				<string>ereset</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.snippet</string>
-			<key>uid</key>
-			<string>C42E99F9-361D-40C5-8106-CE069D186F2A</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
