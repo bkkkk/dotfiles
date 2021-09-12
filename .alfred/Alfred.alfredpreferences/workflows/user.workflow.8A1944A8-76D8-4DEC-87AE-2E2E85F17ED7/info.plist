@@ -73,7 +73,7 @@
 			<key>config</key>
 			<dict>
 				<key>acceptsmulti</key>
-				<true/>
+				<integer>1</integer>
 				<key>filetypes</key>
 				<array/>
 				<key>name</key>

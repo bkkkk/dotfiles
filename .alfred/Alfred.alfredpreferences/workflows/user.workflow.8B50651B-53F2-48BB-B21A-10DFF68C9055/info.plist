@@ -90,16 +90,33 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>subtext</key>
-				<string>{query} is the PR message</string>
+				<string>{query}</string>
 				<key>text</key>
-				<string>Set Message Title</string>
+				<string>Set PR Title</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>2146DCCC-A1A9-4B75-AF44-117AEB556F45</string>
+			<string>D01A5EBD-FA95-4CE9-9B5A-F7C09D276027</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>keyword</key>
+				<string>gpr</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.snippet</string>
+			<key>uid</key>
+			<string>48D10300-E256-4282-BCE0-7F6FA67CAA04</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -128,33 +145,16 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>subtext</key>
-				<string>{query}</string>
+				<string>{query} is the PR message</string>
 				<key>text</key>
-				<string>Set PR Title</string>
+				<string>Set Message Title</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>D01A5EBD-FA95-4CE9-9B5A-F7C09D276027</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>keyword</key>
-				<string>pr</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.snippet</string>
-			<key>uid</key>
-			<string>48D10300-E256-4282-BCE0-7F6FA67CAA04</string>
+			<string>2146DCCC-A1A9-4B75-AF44-117AEB556F45</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>

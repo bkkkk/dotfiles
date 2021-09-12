@@ -170,7 +170,7 @@
 	<key>description</key>
 	<string></string>
 	<key>disabled</key>
-	<false/>
+	<true/>
 	<key>name</key>
 	<string>Kafka Snippet Triggered Workflows</string>
 	<key>objects</key>

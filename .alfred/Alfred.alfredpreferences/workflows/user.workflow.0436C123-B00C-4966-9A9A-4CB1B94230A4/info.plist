@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>1C1E777A-45FB-485F-A06A-DCAF276D834E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E262CF1B-FE46-47ED-8661-9D5906910DE9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E262CF1B-FE46-47ED-8661-9D5906910DE9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B276473E-3881-42CC-B742-973630EC6E41</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F9907F54-1025-42CA-9C31-4D94CEFE63F8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1C1E777A-45FB-485F-A06A-DCAF276D834E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string></string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Time with TimeZone</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>keyword</key>
+				<string>d.tz</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.snippet</string>
+			<key>uid</key>
+			<string>F9907F54-1025-42CA-9C31-4D94CEFE63F8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>fixedorder</key>
+				<false/>
+				<key>items</key>
+				<string>[{"title":"10","arg":"10"},{"title":"14","arg":"14"},{"title":"15","arg":"15"},{"title":"16","arg":"16"},{"title":"17","arg":"17"},{"title":"13","arg":"13"},{"title":"18","arg":"18"},{"title":"11","arg":"11"}]</string>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>TimeZoned Announcement Messages</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.listfilter</string>
+			<key>uid</key>
+			<string>1C1E777A-45FB-485F-A06A-DCAF276D834E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>B276473E-3881-42CC-B742-973630EC6E41</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+  var hour = argv[0];
+  var localTime = new Date();
+  localTime.setHours(hour);
+  localTime.setMinutes(0);
+  localTime.setSeconds(0);
+
+  var japanHour = new Date(localTime.toLocaleString("en-GB", {timeZone: "Asia/Tokyo", hour12: false})).getHours();
+  var result = "🇯🇵 - " + localTime.getHours() + ":00 JST\n";
+
+  var turkeyHour = new Date(localTime.toLocaleString("en-GB", {timeZone: "Asia/Istanbul", hour12: false})).getHours();
+  result += "🇹🇷 - " + turkeyHour + ":00 GMT+3";
+
+  return result;
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E262CF1B-FE46-47ED-8661-9D5906910DE9</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1C1E777A-45FB-485F-A06A-DCAF276D834E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>270</integer>
+			<key>ypos</key>
+			<integer>280</integer>
+		</dict>
+		<key>B276473E-3881-42CC-B742-973630EC6E41</key>
+		<dict>
+			<key>xpos</key>
+			<integer>715</integer>
+			<key>ypos</key>
+			<integer>280</integer>
+		</dict>
+		<key>E262CF1B-FE46-47ED-8661-9D5906910DE9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>495</integer>
+			<key>ypos</key>
+			<integer>280</integer>
+		</dict>
+		<key>F9907F54-1025-42CA-9C31-4D94CEFE63F8</key>
+		<dict>
+			<key>xpos</key>
+			<integer>70</integer>
+			<key>ypos</key>
+			<integer>280</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>cn.alanhe.switch-audio</string>
+	<string></string>
 	<key>connections</key>
 	<dict>
 		<key>1450496C-74BC-4EDE-930B-ADC6027C5449</key>
@@ -60,7 +60,7 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string>Alan He</string>
+	<string></string>
 	<key>description</key>
 	<string>Quickly switch sound output or input</string>
 	<key>disabled</key>
@@ -89,35 +89,6 @@
 			<string>39B059B1-CD01-4C2D-8907-1E2F9262CD04</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>on run argv
-  set theQuery to item 1 of argv
-
-tell application "System Preferences"	reveal pane id "com.apple.preference.sound"end telltell application "System Events"	tell application process "System Preferences"		tell tab group 1 of window "Sound"			click radio button "Output"			tell table 1 of scroll area 1				select (row 1 where value of text field 1 is theQuery)							end tell		end tell	end tellend tellif application "System Preferences" is running then	tell application "System Preferences" to quitend if
-
-return theQuery
-end run</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>3AE8EB58-5F7D-49B6-98C1-4BAE5E79FC2E</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -174,6 +145,35 @@ do shell script comm
 			<string>B066EEAB-4F3C-4516-9F00-E8FD7A5439B6</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+  set theQuery to item 1 of argv
+
+tell application "System Preferences"	reveal pane id "com.apple.preference.sound"end telltell application "System Events"	tell application process "System Preferences"		tell tab group 1 of window "Sound"			click radio button "Output"			tell table 1 of scroll area 1				select (row 1 where value of text field 1 is theQuery)							end tell		end tell	end tellend tellif application "System Preferences" is running then	tell application "System Preferences" to quitend if
+
+return theQuery
+end run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3AE8EB58-5F7D-49B6-98C1-4BAE5E79FC2E</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -315,6 +315,6 @@ Supports 10.15.7 and has not been tested under the latest system.</string>
 	<key>version</key>
 	<string>2.0</string>
 	<key>webaddress</key>
-	<string>https://1991421.cn</string>
+	<string></string>
 </dict>
 </plist>

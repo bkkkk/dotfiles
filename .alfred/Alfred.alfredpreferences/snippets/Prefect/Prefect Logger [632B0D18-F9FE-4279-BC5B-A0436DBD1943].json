@@ -3,6 +3,6 @@
     "snippet" : "logger = prefect.context.get(\"logger\")",
     "uid" : "632B0D18-F9FE-4279-BC5B-A0436DBD1943",
     "name" : "Prefect Logger",
-    "keyword" : "plogger"
+    "keyword" : "logger"
   }
 }
