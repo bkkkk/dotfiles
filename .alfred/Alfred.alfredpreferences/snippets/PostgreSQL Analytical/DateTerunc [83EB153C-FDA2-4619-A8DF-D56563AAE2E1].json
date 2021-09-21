@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "date_trunc('day', created_at)",
+    "uid" : "83EB153C-FDA2-4619-A8DF-D56563AAE2E1",
+    "name" : "DateTerunc",
+    "keyword" : "dtc"
+  }
+}

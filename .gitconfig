@@ -6,7 +6,6 @@
 [core]
     editor = subl -n -w
     excludesfile = /Users/exco42/.gitignore
-    pager = delta
 
 [interactive]
     diffFilter = delta --color-only
