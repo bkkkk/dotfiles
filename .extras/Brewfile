@@ -16,6 +16,8 @@ brew 'libgit2'
 brew 'openssl'
 brew 'pkg-config'
 brew 'fzf'
+brew 'pyenv'
+brew 'pyenv-virtualenv'
 
 cask 'alfred'
 cask 'bartender'
