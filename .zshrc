@@ -13,7 +13,7 @@ plugins=(
     z
     git
     git-extras
-    osx
+    macos
     terraform
 )
 
