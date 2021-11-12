@@ -9,6 +9,7 @@ tap 'homebrew/cask-fonts'
 # Brews
 brew 'zsh'
 brew 'zsh-completions'
+brew 'zsh-syntax-highlighting'
 brew 'git'
 brew 'git-delta'
 brew 'gh'
@@ -49,7 +50,4 @@ mas 'Fantastical 2', id: 975937182
 mas 'Gifox', id: 1461845568
 mas 'Keynote', id: 409183694
 mas 'LINE', id: 539883307
-mas 'Marked 2', id: 890031187
-mas 'Numbers', id: 409203825
-mas 'Pages', id: 409201541
 mas 'Spark', id: 1176895641
