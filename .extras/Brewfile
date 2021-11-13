@@ -2,7 +2,7 @@
 cask_args appdir: '/Applications'
 
 # Taps
-tap 'caskroom/cask'
+tap 'homebrew/cask'
 tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
 
@@ -48,6 +48,5 @@ mas 'Drafts', id: 1435957248
 mas 'Encounter+', id: 1170693487
 mas 'Fantastical 2', id: 975937182
 mas 'Gifox', id: 1461845568
-mas 'Keynote', id: 409183694
 mas 'LINE', id: 539883307
 mas 'Spark', id: 1176895641
