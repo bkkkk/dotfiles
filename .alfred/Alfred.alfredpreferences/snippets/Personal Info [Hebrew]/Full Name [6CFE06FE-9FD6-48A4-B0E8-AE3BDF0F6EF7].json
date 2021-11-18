@@ -1,6 +1,6 @@
 {
   "alfredsnippet" : {
-    "snippet" : "{snippet:last} {snippet:middle} {snippet:first}",
+    "snippet" : "{snippet:heb.last} {snippet:heb.mid} {snippet:heb.first}",
     "uid" : "6CFE06FE-9FD6-48A4-B0E8-AE3BDF0F6EF7",
     "name" : "Full Name",
     "keyword" : "full"
