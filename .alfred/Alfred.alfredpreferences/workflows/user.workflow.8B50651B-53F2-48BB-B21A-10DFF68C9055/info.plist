@@ -205,10 +205,6 @@
 	<dict>
 		<key>2146DCCC-A1A9-4B75-AF44-117AEB556F45</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>2</integer>
-			<key>note</key>
-			<string>Topic Name</string>
 			<key>xpos</key>
 			<integer>350</integer>
 			<key>ypos</key>
@@ -230,8 +226,6 @@
 		</dict>
 		<key>93B3BD57-4474-416C-AF54-44A04CA046C1</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>2</integer>
 			<key>xpos</key>
 			<integer>490</integer>
 			<key>ypos</key>
@@ -239,8 +233,6 @@
 		</dict>
 		<key>A57775A1-38AB-4E48-8785-2787331B58A6</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>1</integer>
 			<key>xpos</key>
 			<integer>295</integer>
 			<key>ypos</key>
@@ -248,10 +240,6 @@
 		</dict>
 		<key>D01A5EBD-FA95-4CE9-9B5A-F7C09D276027</key>
 		<dict>
-			<key>colorindex</key>
-			<integer>1</integer>
-			<key>note</key>
-			<string>Consumer Group Name</string>
 			<key>xpos</key>
 			<integer>165</integer>
 			<key>ypos</key>

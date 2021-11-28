@@ -1,179 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>bundleid</key>
-	<string></string>
-	<key>category</key>
-	<string>Productivity</string>
-	<key>connections</key>
-	<dict>
-		<key>36BA73F2-474B-4437-87E2-0D33D8A669C4</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>19FD470E-591F-492D-888A-5C5DFEEB3479</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>BD9AD992-C217-46CD-AE17-A4C02DB2B831</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-	</dict>
-	<key>createdby</key>
-	<string></string>
-	<key>description</key>
-	<string></string>
-	<key>disabled</key>
-	<false/>
-	<key>name</key>
-	<string>Project Codes</string>
-	<key>objects</key>
-	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>p new</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Create a new project</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>BD9AD992-C217-46CD-AE17-A4C02DB2B831</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string></string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>19FD470E-591F-492D-888A-5C5DFEEB3479</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>applescript</key>
-				<string>on alfred_script(q)
-	set homeDir to path to home folder
-
-	set icloudPath to ((path to library folder from user domain as text) &amp; "Mobile Documents:com~apple~CloudDocs")	set docsDirectory to (icloudPath &amp; ":Documents:")
-	set notesDirectory to (docsDirectory &amp; "notes:")
-	set icloudDirectoryPosix to POSIX path of icloudPath	set docsDirectoryPosix to POSIX path of docsDirectory	set projectsFileName to "project-codes.md"	set projectsFilePath to (docsDirectoryPosix &amp; "/notes/" &amp; projectsFileName)	set craftsSpaceId to "4c377cad-42c6-f36a-6632-8d7a0d9fe119"		tell application "Finder"		if exists (projectsFilePath) as POSIX file then		else			do shell script "echo '' &gt; " &amp; quoted form of (projectsFilePath)		end if	end tell		set projectsList to first item of (read projectsFilePath using delimiter linefeed)	if projectsList is not equal to "" then		set oldDelimiters to AppleScript's text item delimiters		set AppleScript's text item delimiters to " | "		set dateCode to first text item of projectsList		set AppleScript's text item delimiters to "-"		set existingYear to text 3 thru 6 of (first text item of dateCode)		set existingCode to last text item of dateCode		set AppleScript's text item delimiters to oldDelimiters	else		set existingYear to "1900"	end if	set currentYear to year of (current date) as string	if existingYear = currentYear then		set newNumber to "0000" &amp; ((existingCode as number) + 1) as string		set numberString to text ((length of newNumber) - 3) thru (length of newNumber) of newNumber	else		set numberString to "0001"	end if		set newCode to currentYear &amp; "-" &amp; numberString	set projectName to q		set projectText to newCode &amp; " | " &amp; projectName	set projectDirectory to (icloudDirectoryPosix) &amp; "/projects/" &amp; projectText		do shell script "mkdir " &amp; quoted form of projectDirectory		tell application "OmniFocus"		tell document of front window			set theProject to make new project with properties {name:projectText}			set projectID to the id of theProject			set projectURL to "[OmniFocus Project](omnifocus://task/" &amp; projectID &amp; ")"			set encoded to do shell script "perl -MURI::Escape -lne 'print uri_escape($_)' &lt;&lt;&lt;" &amp; quoted form of q			set newProjectDirectory to ((docsDirectoryPosix as string) &amp; "projects/" &amp; projectText &amp; "/")			set textEncoded to do shell script "perl -MURI::Escape -lne 'print uri_escape($_)' &lt;&lt;&lt;" &amp; quoted form of projectText		end tell	end tell		do shell script "echo " &amp; (quoted form of ("[[" &amp; projectText &amp; "]]")) &amp; " &gt;&gt; " &amp; (quoted form of projectsFilePath)	do shell script "sort -r " &amp; (quoted form of projectsFilePath) &amp; " -o " &amp; (quoted form of projectsFilePath)		set craftUri to "craftdocs://createdocument?spaceId=" &amp; craftsSpaceId &amp; "&amp;title=" &amp; projectText &amp; "&amp;content=" &amp; projectURL &amp; "&amp;folderId="	return craftUri	end alfred_script</string>
-				<key>cachescript</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.applescript</string>
-			<key>uid</key>
-			<string>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>p n</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Create a new project</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>36BA73F2-474B-4437-87E2-0D33D8A669C4</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-	</array>
-	<key>readme</key>
-	<string></string>
-	<key>uidata</key>
-	<dict>
-		<key>19FD470E-591F-492D-888A-5C5DFEEB3479</key>
-		<dict>
-			<key>xpos</key>
-			<integer>525</integer>
-			<key>ypos</key>
-			<integer>130</integer>
-		</dict>
-		<key>36BA73F2-474B-4437-87E2-0D33D8A669C4</key>
-		<dict>
-			<key>xpos</key>
-			<integer>60</integer>
-			<key>ypos</key>
-			<integer>220</integer>
-		</dict>
-		<key>AAE2193C-E6C1-4A1C-8A17-774AF8868DCF</key>
-		<dict>
-			<key>xpos</key>
-			<integer>290</integer>
-			<key>ypos</key>
-			<integer>130</integer>
-		</dict>
-		<key>BD9AD992-C217-46CD-AE17-A4C02DB2B831</key>
-		<dict>
-			<key>xpos</key>
-			<integer>60</integer>
-			<key>ypos</key>
-			<integer>40</integer>
-		</dict>
-	</dict>
-	<key>webaddress</key>
-	<string></string>
-</dict>
-</plist>
