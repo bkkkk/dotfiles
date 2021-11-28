@@ -97,7 +97,7 @@
 
     changelog = "!changelog () { git pull --quiet; git --no-pager ld $(git prod-diff)..master; }; changelog"
 
-    
+
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
