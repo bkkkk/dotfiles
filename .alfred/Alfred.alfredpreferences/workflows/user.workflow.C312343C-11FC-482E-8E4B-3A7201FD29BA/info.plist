@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.codeserious.RollTheDice</string>
+	<key>connections</key>
+	<dict>
+		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>050F0630-800D-4428-9E64-631DE90F6E39</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Sean Kennedy</string>
+	<key>description</key>
+	<string>Use keyword 'roll' to roll some dice!</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Roll the Dice</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>0</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>{query}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>50</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>050F0630-800D-4428-9E64-631DE90F6E39</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>roll</string>
+				<key>subtext</key>
+				<string>Example: "roll 1d20", "roll 2d6"</string>
+				<key>text</key>
+				<string>Roll the Dice</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>15299C7A-CDEA-4359-8898-446F2892DB7C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>import re
+import random
+
+query = '{query}'
+
+def return_to_alfred(x):
+  print(x)
+  exit()
+
+def evaluate_roll(roll):
+  matched_roll = re.search('([0-9]*)d([0-9]*)', roll.group(1))
+
+  if not matched_roll:
+    return_to_alfred("Error! Use a dice roll like 1d10")
+
+
+  try:
+    n_dice = int(matched_roll.group(1))
+  except Exception:
+    return_to_alfred("Error! The number of dice is not a number.")
+
+  try:
+    dice_type = int(matched_roll.group(2))
+  except Exception:
+    return_to_alfred("Error! The dice type is not a number.")
+
+  if n_dice &lt;= 0:
+    return_to_alfred("Error! # of Dice must be positive!")
+
+  if dice_type &lt;= 0:
+    return_to_alfred("Error! # of Dice type must be positive!")
+
+  return str(sum(random.sample(range(1, dice_type), n_dice)))
+
+flattened_formula, _ = re.subn('([0-9]*d[0-9]*)', evaluate_roll, query)
+
+try:
+  output = eval(flattened_formula.replace('\\',''))
+except Exception:
+  return_to_alfred("Error! Formula is invalid.")  
+
+return_to_alfred(output)</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Roll Some Dice!
+=====================
+
+An Alfred Workflow that allows you to roll dice by using the keyword 'roll'
+
+### Usage
+
+    roll 1d20</string>
+	<key>uidata</key>
+	<dict>
+		<key>050F0630-800D-4428-9E64-631DE90F6E39</key>
+		<dict>
+			<key>xpos</key>
+			<integer>700</integer>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://www.codeserious.com</string>
+</dict>
+</plist>
