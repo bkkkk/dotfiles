@@ -44,7 +44,7 @@ eval "$(pyenv virtualenv-init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f "/Users/jacoboblanco/.ghcup/env" ] && source "/Users/jacoboblanco/.ghcup/env" # ghcup-env
 
 git_main_branch () {
