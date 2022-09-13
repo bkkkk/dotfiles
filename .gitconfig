@@ -88,11 +88,10 @@
 
     # OneFlow
     publish = "!git push --set-upstream origin $(git branch-name)"
-    feature = "!feature() { git pull; git checkout -b feature/$1; git publish; }; feature"
-    change = "!change() { git pull; git checkout -b change/$1; git publish; }; change"
-    fix = "!fix() { git pull; git checkout -b fix/$1; git publish; }; fix"
-    release = "!release() { git pull; git checkout -b release/$1; git publish; }; release"
-    role = "!role() { git pull; git checkout -b role/$1; git publish; }; role"
+    feature = "!feature() { git pull; git checkout -b feature/$(date +"%Y%m%d%H%M%S")/$1; git publish; }; feature"
+    change = "!change() { git pull; git checkout -b change/$(date +"%Y%m%d%H%M%S")/$1; git publish; }; change"
+    fix = "!fix() { git pull; git checkout -b fix/$(date +"%Y%m%d%H%M%S")/$1; git publish; }; fix"
+    role = "!role() { git pull; git checkout -b role/$(date +"%Y%m%d%H%M%S")/$1; git publish; }; role"
     finish = !target=$(git rev-parse --abbrev-ref HEAD) && git checkout master && git pull && git branch -D $target && git rpo
 
     changelog = "!changelog () { git pull --quiet; git --no-pager ld $(git prod-diff)..master; }; changelog"
@@ -106,3 +105,5 @@
 	required = true
 [pull]
 	rebase = false
+[tag]
+	sort = -v:refname

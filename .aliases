@@ -1,8 +1,8 @@
 alias gs="git status"
 alias gbd="git branch -D"
 
-alias ghr="gh repo view"
-alias ghp="gh pr view"
+alias ore="gh repo view --web"
+alias opr="gh pr view --web"
 
 alias aliases="subl ~/.aliases ~/.local_aliases"
 alias gitconfig="subl ~/.gitconfig"

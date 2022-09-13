@@ -14,6 +14,7 @@ plugins=(
     git
     git-extras
     macos
+    1password
     terraform
 )
 
@@ -60,3 +61,6 @@ git_main_branch () {
     done
     echo master
 }
+
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="/Users/exco42/Library/Python/3.8/bin:$PATH"
