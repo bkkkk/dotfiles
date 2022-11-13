@@ -19,6 +19,8 @@ brew 'pkg-config'
 brew 'fzf'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
+brew 'audio-hijack'
+brew 'loopback'
 
 cask 'alfred'
 cask 'bartender'

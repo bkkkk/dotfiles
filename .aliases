@@ -1,6 +1,8 @@
 alias gs="git status"
 alias gbd="git branch -D"
 
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+
 alias ghr="gh repo view"
 alias ghp="gh pr view"
 

@@ -2,6 +2,7 @@
     name = Jacob Blanco
     email = jayb88@gmail.com
     username = bkkkk
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/4OJpSi1atjqADsZgLpdRNhFSrrwWDclPdjQM8tSQRHnyFX7A6KwUL9UhJx8eHDz23MWLyvvto/XYWNhLNQwAEWByde9Cfn6UjuxQ2eg73DFrnQAlvt+6DMUqOuvqcMaNSR4W1WLk9blw3e7H119H/lRyXlVvf34tARzBQu4Hy+g+r3C4bbo/+jEseLLXu+zsYaUSaGhAPnQtaabL7QhcDs1O14x7g7b4pjseA/9KBsQ+OIyH17V7ewrlJ8gCzOnrb3xJ8CZTguO0sdcVq0h3sDU/HZvMGjJAsg3AbO5mdyuGcWMLs3FB9B5ubbm3JHT6kPahm6WiIdnRCeFRAs8C4QM+24ynmQVphXokeM1J6VW4tnbLQTeiedN8zdkftFMKTu9TtkCb0ODlluzCPR7qb9f/aZAuqpEIvVuJnGSMIoJGPxkzgEwrW6IOaJ6Few0bigoYSsqzqt9/YNohRUO7YDJD/jAgQpfGDRd9cuAtDrZNjRJVwkdLhNuZ8eXUyBoTarz+cLvu7a2RDTiwb/IdEtrsZUeoWxmlPqrqxkYImhHbzJFIt+uP4XZkzDvRz+ZggOs9pnEcIrpsjCioD6JOXfl9wBZvSwAoaNq12/1I07sIDSXQ9PktFrk+PmAf0zvGp6OEcrfGwfLDkAhu8sveFpyYo28/J4sgRC3RhJv53Q==
 
 [core]
     editor = subl -n -w
@@ -106,3 +107,14 @@
 	required = true
 [pull]
 	rebase = false
+
+[help]
+    autocorrect = immediate
+[init]
+	defaultBranch = main
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true

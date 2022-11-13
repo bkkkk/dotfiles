@@ -7,14 +7,18 @@ ZSH_THEME="spaceship"
 
 fpath=(~/.completions/ $fpath)
 
+
+
 plugins=(
     docker
     docker-compose
-    z
     git
-    git-extras
+    git-extras    
+    gh
     macos
+    poetry
     terraform
+    z
 )
 
 FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
