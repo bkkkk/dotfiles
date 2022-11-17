@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.masterjay.connect_to_vpn</string>
 	<key>category</key>
 	<string>Work Only</string>
 	<key>connections</key>
@@ -106,8 +106,34 @@
 				<false/>
 			</dict>
 		</array>
+		<key>A8918838-976A-4C8A-87D3-2DD593CBC757</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A09A8BC2-62AB-4882-8CA6-52DB52162A35</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>D100C0F1-22C7-473A-BCEB-0B74275901C9</key>
 		<array/>
+		<key>F4E7E6ED-5202-4976-B749-CEC00BE1CAAF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>779B6B42-CBA7-4F61-A263-09C9AD9C6009</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Jacobo Blanco</string>
@@ -128,7 +154,7 @@
 				<integer>96</integer>
 				<key>script</key>
 				<string>def connect_to_vpn() {
-	eval $(/usr/local/bin/op signin my &lt;&lt;&lt; Jacobla1988); /usr/local/bin/op get totp $1 | tr -d '\n' | pbcopy
+	eval $(/usr/local/bin/op signin --account my &lt;&lt;&lt; Jacobla1988); /usr/local/bin/op item get --otp $1 | tr -d '\n' | pbcopy
 	osascript ~/.local_scripts/$2
 }
 
@@ -146,6 +172,19 @@ connect_to_vpn {query}</string>
 			<string>D100C0F1-22C7-473A-BCEB-0B74275901C9</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>Prod VPN</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>F4E7E6ED-5202-4976-B749-CEC00BE1CAAF</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -170,29 +209,41 @@ connect_to_vpn {query}</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>fixedorder</key>
+				<key>lastpathcomponent</key>
 				<false/>
-				<key>items</key>
-				<string>[{"title":"Production","arg":"p","subtitle":"Production VPN"},{"title":"Staging","arg":"s","subtitle":"Staging VPN"}]</string>
-				<key>keyword</key>
-				<string>vpn</string>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>subtext</key>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
 				<string></string>
 				<key>title</key>
-				<string>Connect to VPN environment</string>
-				<key>withspace</key>
-				<true/>
+				<string>Connecting to {var:env}</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.listfilter</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>5485C8A5-790D-4360-8F67-1B05A4C7138F</string>
+			<string>44A19A56-CB36-4722-8E05-2BBF9DE4855C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>"Instant Staging VPN" staging_vpn.scpt</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>env</key>
+					<string>Staging</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>A09A8BC2-62AB-4882-8CA6-52DB52162A35</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -243,41 +294,29 @@ connect_to_vpn {query}</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>"Instant Staging VPN" staging_vpn.scpt</string>
-				<key>passthroughargument</key>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>fixedorder</key>
 				<false/>
-				<key>variables</key>
-				<dict>
-					<key>env</key>
-					<string>Staging</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>A09A8BC2-62AB-4882-8CA6-52DB52162A35</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
+				<key>items</key>
+				<string>[{"title":"Production","arg":"p","subtitle":"Production VPN"},{"title":"Staging","arg":"s","subtitle":"Staging VPN"}]</string>
+				<key>keyword</key>
+				<string>vpn</string>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Connecting to {var:env}</string>
+				<string>Connect to VPN environment</string>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.input.listfilter</string>
 			<key>uid</key>
-			<string>44A19A56-CB36-4722-8E05-2BBF9DE4855C</string>
+			<string>5485C8A5-790D-4360-8F67-1B05A4C7138F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -302,6 +341,19 @@ connect_to_vpn {query}</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>Staging VPN</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>A8918838-976A-4C8A-87D3-2DD593CBC757</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -310,9 +362,9 @@ connect_to_vpn {query}</string>
 		<key>1643C578-6E9E-4C1C-A93A-7C009EF98FDD</key>
 		<dict>
 			<key>xpos</key>
-			<integer>550</integer>
+			<integer>460</integer>
 			<key>ypos</key>
-			<integer>105</integer>
+			<integer>200</integer>
 		</dict>
 		<key>166FF87B-CEF1-4472-9715-185386A90A34</key>
 		<dict>
@@ -331,23 +383,30 @@ connect_to_vpn {query}</string>
 		<key>5485C8A5-790D-4360-8F67-1B05A4C7138F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>345</integer>
+			<integer>190</integer>
 			<key>ypos</key>
-			<integer>100</integer>
+			<integer>220</integer>
 		</dict>
 		<key>779B6B42-CBA7-4F61-A263-09C9AD9C6009</key>
 		<dict>
 			<key>xpos</key>
-			<integer>735</integer>
+			<integer>740</integer>
 			<key>ypos</key>
-			<integer>80</integer>
+			<integer>110</integer>
 		</dict>
 		<key>A09A8BC2-62AB-4882-8CA6-52DB52162A35</key>
 		<dict>
 			<key>xpos</key>
-			<integer>735</integer>
+			<integer>745</integer>
 			<key>ypos</key>
-			<integer>150</integer>
+			<integer>190</integer>
+		</dict>
+		<key>A8918838-976A-4C8A-87D3-2DD593CBC757</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<integer>365</integer>
 		</dict>
 		<key>D100C0F1-22C7-473A-BCEB-0B74275901C9</key>
 		<dict>
@@ -355,6 +414,13 @@ connect_to_vpn {query}</string>
 			<integer>1045</integer>
 			<key>ypos</key>
 			<integer>10</integer>
+		</dict>
+		<key>F4E7E6ED-5202-4976-B749-CEC00BE1CAAF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>190</integer>
+			<key>ypos</key>
+			<integer>60</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>

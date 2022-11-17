@@ -17,6 +17,7 @@ plugins=(
     gh
     macos
     poetry
+    1password
     terraform
     z
 )
@@ -48,7 +49,6 @@ eval "$(pyenv virtualenv-init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f "/Users/jacoboblanco/.ghcup/env" ] && source "/Users/jacoboblanco/.ghcup/env" # ghcup-env
 
 git_main_branch () {
@@ -64,3 +64,8 @@ git_main_branch () {
     done
     echo master
 }
+
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="/Users/exco42/Library/Python/3.8/bin:$PATH"
+
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

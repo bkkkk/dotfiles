@@ -3,8 +3,7 @@ alias gbd="git branch -D"
 
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
-alias ghr="gh repo view"
-alias ghp="gh pr view"
+alias pv="gh pr view --web"
 
 alias aliases="subl ~/.aliases ~/.local_aliases"
 alias gitconfig="subl ~/.gitconfig"
@@ -13,4 +12,3 @@ alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias r='radian'
