@@ -1,4 +1,4 @@
-pyenv install 3.9.1
-pyenv global 3.9.1
+PYTHON_VERSION=3.10.7
 
-pip3 install -U radian
+pyenv install $PYTHON_VERSION
+pyenv global $PYTHON_VERSION
