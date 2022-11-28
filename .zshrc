@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh/"
-export VISUAL="subl -w"
+export VISUAL="code"
 
 HIST_STAMPS="yyyy-mm-dd"
 ZSH_THEME="spaceship"
@@ -10,12 +10,14 @@ fpath=(~/.completions/ $fpath)
 plugins=(
     docker
     docker-compose
-    z
     git
-    git-extras
+    git-extras    
+    gh
     macos
+    poetry
     1password
     terraform
+    z
 )
 
 FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -44,23 +46,9 @@ eval "$(pyenv virtualenv-init -)"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-[ -f "/Users/jacoboblanco/.ghcup/env" ] && source "/Users/jacoboblanco/.ghcup/env" # ghcup-env
-
-git_main_branch () {
-    command git rev-parse --git-dir &> /dev/null || return
-    local ref
-    for ref in refs/{heads,remotes/{origin,upstream}}/{main,trunk}
-    do
-        if command git show-ref -q --verify $ref
-        then
-            echo ${ref:t}
-            return
-        fi
-    done
-    echo master
-}
-
+# Enable Poetry Support
 export PATH="$HOME/.poetry/bin:$PATH"
-export PATH="/Users/exco42/Library/Python/3.8/bin:$PATH"
+
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

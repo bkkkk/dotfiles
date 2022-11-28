@@ -25,3 +25,31 @@ tick="\u2714"
 cross="\u2716"
 star="\u2605"
 bullet="\u2022"
+
+
+function log_h1() {
+    echo "${white}${bold}${1}${reset}"
+}
+
+function log_info() {
+    echo "${blue}${bold}${bullet} ${1}${reset}"
+}
+
+function log_success() {
+    echo "${green}${bold}${tick} ${1}${reset}"
+}
+
+
+function error_exit() {
+     echo "${red}${bold}${cross} ${1}${reset}" 1>&2
+     exit 1
+}
+
+function wait_on_error() {
+     read -q "REPLY?${yellow}${bold}${question} ${1} Should we continue? [Y]es.${reset}"
+     if [ "$REPLY" = "Y" ]; then
+          return
+     else
+          exit 1
+     fi
+}
