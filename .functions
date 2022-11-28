@@ -1,1 +1,6 @@
 function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}
+
+function mpass() {
+	PASS=$(echo -n $2$1 | md5)
+	echo "ALTER USER $1 ENCRYPTED PASSWORD 'md5$PASS';"
+}

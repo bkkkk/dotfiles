@@ -52,11 +52,10 @@
     d = diff --color-words
     dc = diff --cached
 
-    # Pull
+    # Push and Pull
     yank = pull --force
-
-    # Push
     shove = push --force
+    shake = !"git pull; git push;"
 
     # Stash
     st = stash
@@ -94,8 +93,8 @@
     role = "!role() { git pull; git checkout -b role/$(date +"%Y%m%d%H%M%S")/$1; git publish; }; role"
     finish = !target=$(git rev-parse --abbrev-ref HEAD) && git checkout master && git pull && git branch -D $target && git rpo
 
-    changelog = "!changelog () { git pull --quiet; git --no-pager ld $(git prod-diff)..master; }; changelog"
-
+    changelog = "!changelog() { git pull --quiet; git --no-pager ld $(git prod-diff)..master; }; changelog"
+    pr = "!pr() { TITLE='TEST '${1}; echo $TITLE; }; pr"
 
 
 [filter "lfs"]
