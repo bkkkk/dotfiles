@@ -8,8 +8,6 @@ ZSH_THEME="spaceship"
 fpath=(~/.completions/ $fpath)
 
 plugins=(
-    docker
-    docker-compose
     git
     git-extras    
     gh
@@ -17,7 +15,6 @@ plugins=(
     poetry
     1password
     terraform
-    z
 )
 
 FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -52,3 +49,5 @@ eval "$(pyenv virtualenv-init -)"
 export PATH="$HOME/.poetry/bin:$PATH"
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval "$(zoxide init zsh)"
