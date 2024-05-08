@@ -11,3 +11,4 @@ alias zshrc="vim ~/.zshrc"
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias prv="gh pr view --web"
+alias grep=rg
