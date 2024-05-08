@@ -75,7 +75,6 @@
 
     lg = !"git lg1"
     lg1 = !"git lg1-specific --all"
-
     lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
 
     # Reset
@@ -120,3 +119,5 @@
     gpgsign = true
 [tag]
     sort = -v:refname
+[maintenance]
+	repo = /Users/jacobo.blanco/repos/datascience-flows
