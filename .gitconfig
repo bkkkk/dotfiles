@@ -43,8 +43,8 @@
     amend = commit --amend
 
     # Checkout
-    co = checkout
-    cb = checkout -b
+    co = switch
+    cb = switch -c
 
     # Tags
     t = tag
