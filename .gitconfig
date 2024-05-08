@@ -30,8 +30,10 @@
     br = branch
     bd = branch -D
     branch-name = rev-parse --abbrev-ref HEAD
-    branch-diff = diff master...HEAD
+    branch-diff = !"git diff $(git main-branch)...HEAD"
     prod-diff = describe --tags --match 'v[0-9].[0-9].[0-9]*-production' --abbrev=0 HEAD
+
+    main-branch = !"git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
 
     # Commit
     c = commit
@@ -88,15 +90,15 @@
 
     # OneFlow
     publish = "!git push --set-upstream origin $(git branch-name)"
+
+    # Prep a new branch of work
     feature = "!feature() { git pull; git checkout -b feature/$(date +"%Y%m%d%H%M%S")/$1; git publish; }; feature"
     change = "!change() { git pull; git checkout -b change/$(date +"%Y%m%d%H%M%S")/$1; git publish; }; change"
     fix = "!fix() { git pull; git checkout -b fix/$(date +"%Y%m%d%H%M%S")/$1; git publish; }; fix"
     role = "!role() { git pull; git checkout -b role/$(date +"%Y%m%d%H%M%S")/$1; git publish; }; role"
-    finish = !target=$(git rev-parse --abbrev-ref HEAD) && git checkout master && git pull && git branch -D $target && git rpo
 
-    changelog = "!changelog() { git pull --quiet; git --no-pager ld $(git prod-diff)..master; }; changelog"
-    pr = "!pr() { TITLE='TEST '${1}; echo $TITLE; }; pr"
-
+    # Close off a branch once things have gotten merged in GitHub
+    finish = !target=$(git rev-parse --abbrev-ref HEAD) && git checkout $(git main-branch) && git pull && git branch -D $target && gh poi && git rpo
 
 [filter "lfs"]
     clean = git-lfs clean -- %f
