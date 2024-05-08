@@ -4,9 +4,3 @@ export PYTHON_CONFIGURE_OPTS="--enable-framework"
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export HDF5_DIR=/opt/homebrew/opt/hdf5
-export postgres_db_name="postgres"
-export postgres_username="jacobo.blanco"
-export postgres_password="jacob_test"
-export postgres_host="localhost"
-export ENV="local"
-export ENVIRONMENT="local"
