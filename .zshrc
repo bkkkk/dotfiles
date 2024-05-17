@@ -1,9 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh/"
-export VISUAL="code"
+export VISUAL="subl"
 
 HIST_STAMPS="yyyy-mm-dd"
-ZSH_THEME="spaceship"
 
 fpath=(~/.completions/ $fpath)
 
@@ -45,9 +44,7 @@ eval "$(pyenv virtualenv-init -)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
-# Enable Poetry Support
-export PATH="$HOME/.poetry/bin:$PATH"
-
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
