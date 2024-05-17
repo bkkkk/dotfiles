@@ -102,7 +102,7 @@
     role = "!role() { git pull; git checkout -b role/$(date +"%Y%m%d%H%M%S")/$1; git publish; }; role"
 
     # Close off a branch once things have gotten merged in GitHub
-    finish = !target=$(git rev-parse --abbrev-ref HEAD) && git checkout $(git main-branch) && git pull && git branch -D $target && gh poi && git rpo
+    finish = !git checkout $(git main-branch) && git pull && gh poi && git rpo
 [merge]
     conflictstyle = diff3
 
