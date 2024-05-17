@@ -128,3 +128,5 @@
     sort = -v:refname
 [maintenance]
 	repo = /Users/jacobo.blanco/repos/datascience-flows
+[branch]
+	autosetuprebase = always

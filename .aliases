@@ -1,14 +1,5 @@
 alias gs="git status"
-alias gbd="git branch -D"
-
-
-alias aliases="subl ~/.aliases ~/.local_aliases"
-alias gitconfig="subl ~/.gitconfig"
-
-alias vimrc="vim ~/.vimrc"
-alias zshrc="vim ~/.zshrc"
 
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-alias prv="gh pr view --web"
 alias grep=rg
