@@ -157,4 +157,8 @@ dmypy.json
 .iml
 *.iml
 .idea/
-.python-version
+toml.ruff
+.github/copilot_instructions.md
+*.claude/
+CLAUDE.md
+prds/
