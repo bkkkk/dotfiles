@@ -6,7 +6,7 @@
 
 [core]
     editor = subl -n -w
-    excludesfile = /Users/exco42/.gitignore
+    excludesfile = /Users/jacobo.blanco/.gitignore
     pager = delta
 
 [interactive]
@@ -35,10 +35,14 @@
     br = branch
     bd = branch -D
     branch-name = rev-parse --abbrev-ref HEAD
+    repo-name = !"basename $(git rev-parse --show-toplevel)"
     branch-diff = !"git diff $(git main-branch)...HEAD"
     prod-diff = describe --tags --match 'v[0-9].[0-9].[0-9]*-production' --abbrev=0 HEAD
 
     main-branch = !"git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
+
+    find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
+    show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
 
     # Commit
     c = commit
@@ -69,9 +73,6 @@
     st = stash
     stp = stash pop
 
-    # Cleanup
-    rpo = remote prune origin
-
     # Status/Logging
     s = status
     ss = status -sb
@@ -81,6 +82,8 @@
     lg = !"git lg1"
     lg1 = !"git lg1-specific --all"
     lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+    lg = lg1
 
     # Reset
     discard = checkout -- # Discard changes in Working Directory
@@ -90,19 +93,23 @@
 
     # Remote
     r = remote -v
-    prune-all = !git prune & git remote prune origin
 
     # OneFlow
-    publish = "!git push --set-upstream origin $(git branch-name)"
+    publish = "!git push"
+
+    jeb-branch = "!jeb_branch() { echo "jeb/$1/$(date +"%Y%m%d%H%M%S")/$2"; }; jeb_branch"
 
     # Prep a new branch of work
-    feature = "!feature() { git pull; git checkout -b feature/$(date +"%Y%m%d%H%M%S")/$1; git publish; }; feature"
-    change = "!change() { git pull; git checkout -b change/$(date +"%Y%m%d%H%M%S")/$1; git publish; }; change"
-    fix = "!fix() { git pull; git checkout -b fix/$(date +"%Y%m%d%H%M%S")/$1; git publish; }; fix"
-    role = "!role() { git pull; git checkout -b role/$(date +"%Y%m%d%H%M%S")/$1; git publish; }; role"
+    feature = "!feature() { git pull; git checkout -b $(git jeb-branch feature $1); git publish; }; feature"
+    change = "!change() { git pull; git checkout -b $(git jeb-branch change $1); git publish; }; change"
+    fix = "!fix() { git pull; git checkout -b $(git jeb-branch fix $1); git publish; }; fix"
+    role = "!role() { git pull; git checkout -b $(git jeb-branch role $1); git publish; }; role"
 
     # Close off a branch once things have gotten merged in GitHub
-    finish = !git checkout $(git main-branch) && git pull && gh poi && git rpo
+    finish = !git checkout $(git main-branch) && git pull && gh poi
+
+    prw = !gh pr view -w
+    prv = !gh pr view -w
 [merge]
     conflictstyle = diff3
 
@@ -128,5 +135,5 @@
     sort = -v:refname
 [maintenance]
 	repo = /Users/jacobo.blanco/repos/datascience-flows
-[branch]
-	autosetuprebase = always
+[push]
+	autoSetupRemote = true

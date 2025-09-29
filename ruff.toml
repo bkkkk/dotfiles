@@ -1,0 +1,12 @@
+line-length = 120
+
+[lint]
+extend-select = ["I", "B", "Q", "D", "W", "EM", "S", "RSE", "RET", "SLF", "PD", "ANN001", "UP007"]
+ignore = ["D104", "D100"]
+
+[lint.pydocstyle]
+convention = "numpy"
+
+[lint.per-file-ignores]
+"__init__.py" = ["E402"]
+"tests/*" = ["B011", "S101", "D"]
