@@ -35,8 +35,6 @@ if [ -f ~/.local_aliases ]; then
     source ~/.local_aliases
 fi
 
-eval "$(gh copilot alias -- zsh)"
-
 export PATH=$SPARK_HOME/bin:/Users/jacobo.blanco/.local/bin:$PATH
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -50,7 +48,6 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
-. "$HOME/.cargo/env"
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
 
