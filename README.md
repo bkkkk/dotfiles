@@ -14,13 +14,13 @@ One interesting component of this setup is the use of [bare git repositories](ht
 
 ## Setup
 
-Prior to the installation make sure you have committed the alias to your .zsh:
+1. Define a special alias to `git` that you'll use exclusively to work with this dotfiles repository. Note that you don't need to add this to your .zshrc, since we'll be overwriting it anyways with the version in this repository. 
 
 ```shell
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 ```
 
-And that your source repository ignores the folder where you'll clone it, so that you don't create weird recursion problems:
+Then add the local folder to the gitignore to avoid creating weird recursion problems:
 
 ```
 echo ".cfg" >> .gitignore
@@ -32,15 +32,10 @@ Now clone your dotfiles into a bare repository in a "dot" folder of your $HOME:
 git clone --bare <git-repo-url> $HOME/.cfg
 ```
 
-Define the alias in the current shell scope:
-
-```
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-```
-
 Checkout the actual content from the bare repository to your $HOME:
 
 ```
+rm ~/.zshrc
 config checkout
 ```
 
