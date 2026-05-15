@@ -20,6 +20,7 @@ brew 'openssl'
 brew 'pkg-config'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
+brew 'eza'
 
 # Casks
 cask 'alfred'

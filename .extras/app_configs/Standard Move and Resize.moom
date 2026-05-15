@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Custom Controls (4001)</key>
+	<array>
+		<dict>
+			<key>Action</key>
+			<integer>10001</integer>
+			<key>Chain Mode</key>
+			<integer>0</integer>
+			<key>Children</key>
+			<array>
+				<dict>
+					<key>Action</key>
+					<integer>19</integer>
+					<key>Configuration Grid</key>
+					<dict>
+						<key>Configuration Grid: Columns</key>
+						<integer>4</integer>
+						<key>Configuration Grid: Rows</key>
+						<integer>2</integer>
+					</dict>
+					<key>Hot Key</key>
+					<dict>
+						<key>Identifier</key>
+						<string>B5291436-F3EC-446D-97F5-598CE4EF576A</string>
+						<key>Key Code</key>
+						<integer>38</integer>
+						<key>Modifier Flags</key>
+						<integer>256</integer>
+						<key>Visual Representation</key>
+						<string>J</string>
+					</dict>
+					<key>Identifier</key>
+					<string>B5291436-F3EC-446D-97F5-598CE4EF576A</string>
+					<key>Relative Frame</key>
+					<string>{{0, 0}, {0.5, 1}}</string>
+					<key>Window Description</key>
+					<dict>
+						<key>Application Name</key>
+						<string>iTerm2</string>
+						<key>Available Screen Frame</key>
+						<string>{{0, 0}, {2560, 1415}}</string>
+						<key>Bundle Identifier</key>
+						<string>com.googlecode.iterm2</string>
+						<key>PID</key>
+						<string>861</string>
+						<key>Screen Frame</key>
+						<string>{{0, 0}, {2560, 1440}}</string>
+						<key>Window Frame</key>
+						<string>{{170, 243}, {1575, 641}}</string>
+						<key>Window Number</key>
+						<string>115</string>
+						<key>Window Subrole</key>
+						<string>AXStandardWindow</string>
+						<key>Window Title</key>
+						<string>jacoboblanco@Jacobos-MacBook-Pro:~/.extras/app_configs</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Action</key>
+					<integer>19</integer>
+					<key>Configuration Grid</key>
+					<dict>
+						<key>Configuration Grid: Columns</key>
+						<integer>4</integer>
+						<key>Configuration Grid: Rows</key>
+						<integer>2</integer>
+					</dict>
+					<key>Hot Key</key>
+					<dict>
+						<key>Identifier</key>
+						<string>0B77A1C7-4586-4F76-A845-E368A4E2C652</string>
+						<key>Key Code</key>
+						<integer>37</integer>
+						<key>Modifier Flags</key>
+						<integer>256</integer>
+						<key>Visual Representation</key>
+						<string>L</string>
+					</dict>
+					<key>Identifier</key>
+					<string>0B77A1C7-4586-4F76-A845-E368A4E2C652</string>
+					<key>Relative Frame</key>
+					<string>{{0.5, 0}, {0.5, 1}}</string>
+					<key>Window Description</key>
+					<dict>
+						<key>Application Name</key>
+						<string>iTerm2</string>
+						<key>Available Screen Frame</key>
+						<string>{{0, 0}, {2560, 1415}}</string>
+						<key>Bundle Identifier</key>
+						<string>com.googlecode.iterm2</string>
+						<key>PID</key>
+						<string>861</string>
+						<key>Screen Frame</key>
+						<string>{{0, 0}, {2560, 1440}}</string>
+						<key>Window Frame</key>
+						<string>{{170, 243}, {1575, 641}}</string>
+						<key>Window Number</key>
+						<string>115</string>
+						<key>Window Subrole</key>
+						<string>AXStandardWindow</string>
+						<key>Window Title</key>
+						<string>jacoboblanco@Jacobos-MacBook-Pro:~/.extras/app_configs</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Action</key>
+					<integer>19</integer>
+					<key>Configuration Grid</key>
+					<dict>
+						<key>Configuration Grid: Columns</key>
+						<integer>4</integer>
+						<key>Configuration Grid: Rows</key>
+						<integer>2</integer>
+					</dict>
+					<key>Hot Key</key>
+					<dict>
+						<key>Identifier</key>
+						<string>F9576BB3-B1C1-45FF-B79D-03D31CA18C73</string>
+						<key>Key Code</key>
+						<integer>43</integer>
+						<key>Modifier Flags</key>
+						<integer>256</integer>
+						<key>Visual Representation</key>
+						<string>,</string>
+					</dict>
+					<key>Identifier</key>
+					<string>F9576BB3-B1C1-45FF-B79D-03D31CA18C73</string>
+					<key>Relative Frame</key>
+					<string>{{0, 0}, {1, 0.5}}</string>
+					<key>Window Description</key>
+					<dict>
+						<key>Application Name</key>
+						<string>iTerm2</string>
+						<key>Available Screen Frame</key>
+						<string>{{0, 0}, {2560, 1415}}</string>
+						<key>Bundle Identifier</key>
+						<string>com.googlecode.iterm2</string>
+						<key>PID</key>
+						<string>861</string>
+						<key>Screen Frame</key>
+						<string>{{0, 0}, {2560, 1440}}</string>
+						<key>Window Frame</key>
+						<string>{{170, 243}, {1575, 641}}</string>
+						<key>Window Number</key>
+						<string>115</string>
+						<key>Window Subrole</key>
+						<string>AXStandardWindow</string>
+						<key>Window Title</key>
+						<string>jacoboblanco@Jacobos-MacBook-Pro:~/.extras/app_configs</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Action</key>
+					<integer>19</integer>
+					<key>Configuration Grid</key>
+					<dict>
+						<key>Configuration Grid: Columns</key>
+						<integer>4</integer>
+						<key>Configuration Grid: Rows</key>
+						<integer>2</integer>
+					</dict>
+					<key>Hot Key</key>
+					<dict>
+						<key>Identifier</key>
+						<string>C9BC1AEA-FF8F-44B1-8735-322CA360634E</string>
+						<key>Key Code</key>
+						<integer>34</integer>
+						<key>Modifier Flags</key>
+						<integer>256</integer>
+						<key>Visual Representation</key>
+						<string>I</string>
+					</dict>
+					<key>Identifier</key>
+					<string>C9BC1AEA-FF8F-44B1-8735-322CA360634E</string>
+					<key>Relative Frame</key>
+					<string>{{0, 0.5}, {1, 0.5}}</string>
+					<key>Window Description</key>
+					<dict>
+						<key>Application Name</key>
+						<string>iTerm2</string>
+						<key>Available Screen Frame</key>
+						<string>{{0, 0}, {2560, 1415}}</string>
+						<key>Bundle Identifier</key>
+						<string>com.googlecode.iterm2</string>
+						<key>PID</key>
+						<string>861</string>
+						<key>Screen Frame</key>
+						<string>{{0, 0}, {2560, 1440}}</string>
+						<key>Window Frame</key>
+						<string>{{170, 243}, {1575, 641}}</string>
+						<key>Window Number</key>
+						<string>115</string>
+						<key>Window Subrole</key>
+						<string>AXStandardWindow</string>
+						<key>Window Title</key>
+						<string>jacoboblanco@Jacobos-MacBook-Pro:~/.extras/app_configs</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Action</key>
+					<integer>19</integer>
+					<key>Configuration Grid</key>
+					<dict>
+						<key>Configuration Grid: Columns</key>
+						<integer>4</integer>
+						<key>Configuration Grid: Rows</key>
+						<integer>2</integer>
+					</dict>
+					<key>Hot Key</key>
+					<dict>
+						<key>Identifier</key>
+						<string>F5002BB1-11D0-4685-A7B2-EB771235C287</string>
+						<key>Key Code</key>
+						<integer>40</integer>
+						<key>Modifier Flags</key>
+						<integer>256</integer>
+						<key>Visual Representation</key>
+						<string>K</string>
+					</dict>
+					<key>Identifier</key>
+					<string>F5002BB1-11D0-4685-A7B2-EB771235C287</string>
+					<key>Relative Frame</key>
+					<string>{{0, 0}, {1, 1}}</string>
+					<key>Window Description</key>
+					<dict>
+						<key>Application Name</key>
+						<string>iTerm2</string>
+						<key>Available Screen Frame</key>
+						<string>{{0, 0}, {2560, 1415}}</string>
+						<key>Bundle Identifier</key>
+						<string>com.googlecode.iterm2</string>
+						<key>PID</key>
+						<string>861</string>
+						<key>Screen Frame</key>
+						<string>{{0, 0}, {2560, 1440}}</string>
+						<key>Window Frame</key>
+						<string>{{170, 243}, {1575, 641}}</string>
+						<key>Window Number</key>
+						<string>115</string>
+						<key>Window Subrole</key>
+						<string>AXStandardWindow</string>
+						<key>Window Title</key>
+						<string>jacoboblanco@Jacobos-MacBook-Pro:~/.extras/app_configs</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Action</key>
+					<integer>19</integer>
+					<key>Configuration Grid</key>
+					<dict>
+						<key>Configuration Grid: Columns</key>
+						<integer>4</integer>
+						<key>Configuration Grid: Rows</key>
+						<integer>2</integer>
+					</dict>
+					<key>Hot Key</key>
+					<dict>
+						<key>Identifier</key>
+						<string>03B8E8A7-B6AC-430F-9BE9-EB01FCB72A94</string>
+						<key>Key Code</key>
+						<integer>32</integer>
+						<key>Modifier Flags</key>
+						<integer>256</integer>
+						<key>Visual Representation</key>
+						<string>U</string>
+					</dict>
+					<key>Identifier</key>
+					<string>03B8E8A7-B6AC-430F-9BE9-EB01FCB72A94</string>
+					<key>Relative Frame</key>
+					<string>{{0, 0.5}, {0.5, 0.5}}</string>
+					<key>Window Description</key>
+					<dict>
+						<key>Application Name</key>
+						<string>iTerm2</string>
+						<key>Available Screen Frame</key>
+						<string>{{0, 0}, {2560, 1415}}</string>
+						<key>Bundle Identifier</key>
+						<string>com.googlecode.iterm2</string>
+						<key>PID</key>
+						<string>861</string>
+						<key>Screen Frame</key>
+						<string>{{0, 0}, {2560, 1440}}</string>
+						<key>Window Frame</key>
+						<string>{{170, 243}, {1575, 641}}</string>
+						<key>Window Number</key>
+						<string>115</string>
+						<key>Window Subrole</key>
+						<string>AXStandardWindow</string>
+						<key>Window Title</key>
+						<string>jacoboblanco@Jacobos-MacBook-Pro:~/.extras/app_configs</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Action</key>
+					<integer>19</integer>
+					<key>Configuration Grid</key>
+					<dict>
+						<key>Configuration Grid: Columns</key>
+						<integer>4</integer>
+						<key>Configuration Grid: Rows</key>
+						<integer>2</integer>
+					</dict>
+					<key>Hot Key</key>
+					<dict>
+						<key>Identifier</key>
+						<string>823E08B0-82DE-4F89-9E02-F5098718EFF1</string>
+						<key>Key Code</key>
+						<integer>46</integer>
+						<key>Modifier Flags</key>
+						<integer>256</integer>
+						<key>Visual Representation</key>
+						<string>M</string>
+					</dict>
+					<key>Identifier</key>
+					<string>823E08B0-82DE-4F89-9E02-F5098718EFF1</string>
+					<key>Relative Frame</key>
+					<string>{{0, 0}, {0.5, 0.5}}</string>
+					<key>Window Description</key>
+					<dict>
+						<key>Application Name</key>
+						<string>iTerm2</string>
+						<key>Available Screen Frame</key>
+						<string>{{0, 0}, {2560, 1415}}</string>
+						<key>Bundle Identifier</key>
+						<string>com.googlecode.iterm2</string>
+						<key>PID</key>
+						<string>861</string>
+						<key>Screen Frame</key>
+						<string>{{0, 0}, {2560, 1440}}</string>
+						<key>Window Frame</key>
+						<string>{{170, 243}, {1575, 641}}</string>
+						<key>Window Number</key>
+						<string>115</string>
+						<key>Window Subrole</key>
+						<string>AXStandardWindow</string>
+						<key>Window Title</key>
+						<string>jacoboblanco@Jacobos-MacBook-Pro:~/.extras/app_configs</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Action</key>
+					<integer>19</integer>
+					<key>Configuration Grid</key>
+					<dict>
+						<key>Configuration Grid: Columns</key>
+						<integer>4</integer>
+						<key>Configuration Grid: Rows</key>
+						<integer>2</integer>
+					</dict>
+					<key>Hot Key</key>
+					<dict>
+						<key>Identifier</key>
+						<string>16E97CFE-8BB1-4688-B813-CB8436A09061</string>
+						<key>Key Code</key>
+						<integer>47</integer>
+						<key>Modifier Flags</key>
+						<integer>256</integer>
+						<key>Visual Representation</key>
+						<string>.</string>
+					</dict>
+					<key>Identifier</key>
+					<string>16E97CFE-8BB1-4688-B813-CB8436A09061</string>
+					<key>Relative Frame</key>
+					<string>{{0.5, 0}, {0.5, 0.5}}</string>
+					<key>Window Description</key>
+					<dict>
+						<key>Application Name</key>
+						<string>iTerm2</string>
+						<key>Available Screen Frame</key>
+						<string>{{0, 0}, {2560, 1415}}</string>
+						<key>Bundle Identifier</key>
+						<string>com.googlecode.iterm2</string>
+						<key>PID</key>
+						<string>861</string>
+						<key>Screen Frame</key>
+						<string>{{0, 0}, {2560, 1440}}</string>
+						<key>Window Frame</key>
+						<string>{{170, 243}, {1575, 641}}</string>
+						<key>Window Number</key>
+						<string>115</string>
+						<key>Window Subrole</key>
+						<string>AXStandardWindow</string>
+						<key>Window Title</key>
+						<string>jacoboblanco@Jacobos-MacBook-Pro:~/.extras/app_configs</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Action</key>
+					<integer>19</integer>
+					<key>Configuration Grid</key>
+					<dict>
+						<key>Configuration Grid: Columns</key>
+						<integer>4</integer>
+						<key>Configuration Grid: Rows</key>
+						<integer>2</integer>
+					</dict>
+					<key>Hot Key</key>
+					<dict>
+						<key>Identifier</key>
+						<string>A568D251-147A-4A71-BE37-7425AC44EE29</string>
+						<key>Key Code</key>
+						<integer>31</integer>
+						<key>Modifier Flags</key>
+						<integer>256</integer>
+						<key>Visual Representation</key>
+						<string>O</string>
+					</dict>
+					<key>Identifier</key>
+					<string>A568D251-147A-4A71-BE37-7425AC44EE29</string>
+					<key>Relative Frame</key>
+					<string>{{0.5, 0.5}, {0.5, 0.5}}</string>
+					<key>Window Description</key>
+					<dict>
+						<key>Application Name</key>
+						<string>iTerm2</string>
+						<key>Available Screen Frame</key>
+						<string>{{0, 0}, {2560, 1415}}</string>
+						<key>Bundle Identifier</key>
+						<string>com.googlecode.iterm2</string>
+						<key>PID</key>
+						<string>861</string>
+						<key>Screen Frame</key>
+						<string>{{0, 0}, {2560, 1440}}</string>
+						<key>Window Frame</key>
+						<string>{{170, 243}, {1575, 641}}</string>
+						<key>Window Number</key>
+						<string>115</string>
+						<key>Window Subrole</key>
+						<string>AXStandardWindow</string>
+						<key>Window Title</key>
+						<string>jacoboblanco@Jacobos-MacBook-Pro:~/.extras/app_configs</string>
+					</dict>
+				</dict>
+			</array>
+			<key>Children Expanded</key>
+			<true/>
+			<key>Identifier</key>
+			<string>D3F828C4-E4F7-438A-B121-D6C69541F181</string>
+			<key>Title</key>
+			<string>Standard Move and Resize</string>
+		</dict>
+	</array>
+</dict>
+</plist>

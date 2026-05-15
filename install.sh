@@ -1,5 +1,7 @@
 #!/bin/zsh
-source utils/colors.sh
+EXTRA_DIR=$HOME/.extras
+
+source $EXTRA_DIR/utils/colors.sh
 
 log_h1 "== Welcome! Setting up standard Jacob environment =="
 
@@ -17,12 +19,12 @@ log_success "Homebrew has been installed"
 
 
 log_info "Installing applications in Brewfile"
-brew update & brew bundle --global || wait_on_error "Failed to install some Homebrew applications."
+brew update & brew bundle --file $EXTRA_DIR || wait_on_error "Failed to install some Homebrew applications."
 log_success "Homebrew applications have been installed"
 
 
 log_info "Setting up Shell Config"
-./zsh/install.sh || error_exit "Failed to configure ZSH"
+$EXTRA_DIR/zsh/install.sh || error_exit "Failed to configure ZSH"
 log_success "ZSH config has been updated"
 
 
@@ -33,12 +35,12 @@ log_success "Python3 environment has been setup"
 
 
 log_info "Setting up Applications"
-./app_configs/install.sh || error_exit "Failed to configure applications"
+$EXTRA_DIR/app_configs/install.sh || error_exit "Failed to configure applications"
 log_success "Additional application configuration has been set"
 
 
 log_info "Setting up MacOS defaults configuration"
-./.macos || error_exit "Failed to setup some MacOS configuration"
+$EXTRA_DIR/.macos || error_exit "Failed to setup some MacOS configuration"
 log_success "MacOS configuration is finished"
 
 
