@@ -1,5 +1,3 @@
-BASEDIR=$(dirname "$0")
-
 log_info "Setting up Alfred"
-defaults write com.runningwithcrayons.Alfred-Preferences syncfolder "${SETUPSPATH}/alfred/.alfred"
+defaults write com.runningwithcrayons.Alfred-Preferences syncfolder "${SETUPSPATH}/alfred/"
 log_success "Done with Alfred!"
