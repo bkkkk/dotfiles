@@ -2,6 +2,10 @@
 
 set -euo pipefail
 
+DOTPATH=${DOTPATH:-$HOME/dotfiles}
+DOTFILES_REPO=${DOTFILES_REPO:-https://github.com/bkkkk/dotfiles.git}
+
+
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -24,10 +28,6 @@ log_warning() {
 log_error() {
     echo -e "${RED}✗${NC} $1"
 }
-
-
-DOTPATH=${DOTPATH:-$HOME/dotfiles}
-DOTFILES_REPO=${DOTFILES_REPO:-https://github.com/bkkkk/dotfiles.git}
 
 # Check if we're on macOS
 if [[ "$(uname)" != "Darwin" ]]; then
@@ -58,7 +58,6 @@ cd "$DOTPATH"
 $DOTPATH/setups/brew.sh
 $DOTPATH/setups/mise.sh
 
-EXTRA_DIR=$HOME/.extras
 
 source $EXTRA_DIR/utils/colors.sh
 

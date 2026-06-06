@@ -27,3 +27,6 @@ shellcheck = "latest"
 # markdownlint-cli2 = "latest"
 gh = "latest"
 # tflint = "latest"
+
+[settings]
+python.uv_venv_auto = "source"
