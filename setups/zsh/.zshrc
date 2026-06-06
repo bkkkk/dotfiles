@@ -1,9 +1,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh/"
 export VISUAL="subl"
-export DOTFILES_DIR="${HOME}/dotfiles"
-export LOCAL_EXPORTS="${HOME}/.local_exports"
-export LOCAL_ALIASES="${HOME}/.local_aliases"
+export DOTPATH="${HOME}/dotfiles"
+export LOCAL_EXPORTS="${HOME}/.exports.local.sh"
+export LOCAL_ALIASES="${HOME}/.aliases.local.sh"
+export LOCAL_FUNCTIONS="${HOME}/.functions.local.sh"
 
 HIST_STAMPS="yyyy-mm-dd"
 
@@ -24,9 +25,9 @@ FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 source $ZSH/oh-my-zsh.sh
 
 # Shared Aliases/Exports
-source $DOTFILES_DIR/.aliases
-source $DOTFILES_DIR/.exports
-source $DOTFILES_DIR/.functions
+source $DOTPATH/aliases.sh
+source $DOTPATH/exports.sh
+source $DOTPATH/functions.sh
 
 # Local Aliases/Exports
 if [ -f $LOCAL_EXPORTS ]; then
@@ -35,6 +36,10 @@ fi
 
 if [ -f $LOCAL_ALIASES ]; then
     source $LOCAL_ALIASES
+fi
+
+if [ -f $LOCAL_FUNCTIONS ]; then
+    source $LOCAL_FUNCTIONS
 fi
 
 # Setup fzf config
