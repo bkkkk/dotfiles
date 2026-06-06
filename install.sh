@@ -5,7 +5,6 @@ set -euo pipefail
 DOTPATH=${DOTPATH:-$HOME/dotfiles}
 DOTFILES_REPO=${DOTFILES_REPO:-https://github.com/bkkkk/dotfiles.git}
 
-
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -55,9 +54,9 @@ fi
 
 cd "$DOTPATH"
 
-$DOTPATH/setups/brew.sh
-$DOTPATH/setups/mise.sh
-
+$DOTPATH/setups/brew/brew.sh
+$DOTPATH/setups/zsh/zsh.sh
+$DOTPATH/setups/mise/mise.sh
 
 source $EXTRA_DIR/utils/colors.sh
 
