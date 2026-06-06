@@ -1,4 +1,66 @@
-#!/bin/zsh
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+log_info() {
+    echo -e "${BLUE}==>${NC} $1"
+}
+
+log_success() {
+    echo -e "${GREEN}✓${NC} $1"
+}
+
+log_warning() {
+    echo -e "${YELLOW}!${NC} $1"
+}
+
+log_error() {
+    echo -e "${RED}✗${NC} $1"
+}
+
+
+DOTPATH=${DOTPATH:-$HOME/dotfiles}
+DOTFILES_REPO=${DOTFILES_REPO:-https://github.com/bkkkk/dotfiles.git}
+
+# Check if we're on macOS
+if [[ "$(uname)" != "Darwin" ]]; then
+    log_error "This script is only for macOS"
+    exit 1
+fi
+
+echo ""
+log_info "=============================="
+log_info "Installing Dotfiles"
+log_info "=============================="
+echo ""
+log_info "Pulling dotfiles from github into ${DOTPATH}"
+echo ""
+
+if [ ! -d "$DOTPATH" ]; then
+  git clone "$DOTFILES_REPO" "$DOTPATH"
+else
+  echo "$DOTPATH already downloaded. Updating..."
+  cd "$DOTPATH"
+  git stash
+  git checkout main
+  git pull origin main
+fi
+
+cd "$DOTPATH"
+
+$DOTPATH/setups/brew.sh
+
+log_info "Updating Homebrew (this may take a minute)..."
+brew update --quiet 2>&1 | grep -v "^Already up-to-date" || log_success "Homebrew updated"
+
+
 EXTRA_DIR=$HOME/.extras
 
 source $EXTRA_DIR/utils/colors.sh
@@ -12,8 +74,8 @@ log_success "Command-line tools have been installed"
 
 log_info "Installing Homebrew"
 if ! which brew > /dev/null; then
-     # Install Homebrew 
-     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+ # Install Homebrew 
+ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi;
 log_success "Homebrew has been installed"
 
