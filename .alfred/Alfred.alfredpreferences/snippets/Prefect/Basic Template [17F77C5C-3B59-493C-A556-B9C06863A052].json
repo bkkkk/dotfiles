@@ -1,8 +1,0 @@
-{
-  "alfredsnippet" : {
-    "snippet" : "import prefect\nfrom prefect import Flow, task\n\nwith Flow(name=\"{cursor}\") as flow:\n",
-    "uid" : "17F77C5C-3B59-493C-A556-B9C06863A052",
-    "name" : "Basic Template",
-    "keyword" : "basic"
-  }
-}
