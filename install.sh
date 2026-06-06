@@ -69,5 +69,6 @@ $DOTPATH/setups/alfred/alfred.sh
 $DOTPATH/setups/moom/moom.sh
 $DOTPATH/setups/vscode/vscode.sh
 $DOTPATH/setups/macos/macos.sh
+$DOTPATH/setups/claude/claude.sh
 
 ln -sf ${DOTPATH}/.config ${HOME}/.config

@@ -1,0 +1,20 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "model": "sonnet[1m]",
+  "enabledPlugins": {
+    "swift-lsp@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "xclaude-plugin-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "conorluddy/xclaude-plugin"
+      },
+      "autoUpdate": true
+    }
+  },
+  "voiceEnabled": false
+}

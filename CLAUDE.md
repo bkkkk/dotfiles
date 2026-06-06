@@ -12,15 +12,15 @@ Full bootstrap (run once on a new machine):
 ./install.sh
 ```
 
-This calls the three setup scripts in order:
+This calls the setup scripts in order:
 
 | Script | What it does |
 |---|---|
 | `setups/brew/brew.sh` | Installs Homebrew, then runs `setups/brew/Brewfile` via `brew bundle` |
 | `setups/zsh/zsh.sh` | Installs Oh My Zsh; symlinks `.zshrc`, `.zprofile`, `.zshenv` into `$HOME` |
 | `setups/mise/mise.sh` | Symlinks `setups/mise/mise.toml` → `~/.config/mise/config.toml`; runs `mise install` |
-
-macOS system defaults (`setups/macos/macos.sh`) are applied separately and guarded by the sentinel file `~/.macos-defaults-applied` — delete it to re-apply.
+| `setups/macos/macos.sh` | Applies macOS system defaults; guarded by `~/.macos-defaults-applied` — delete to re-apply |
+| `setups/claude/claude.sh` | Symlinks Claude Code config (CLAUDE.md, settings.json, commands/, agents/) into `~/.claude/` |
 
 ## Repository structure
 
@@ -34,8 +34,17 @@ setups/
   zsh/        .zshrc, .zprofile, .zshenv + install script
   mise/       mise.toml (global tool versions) + install script
   macos/      macOS defaults scripts
+  claude/     CLAUDE.md, settings.json, commands/, agents/ + install script
   python/     ruff.toml
 .config/      starship.toml, ghostty config, gh config, etc.
+```
+
+## Testing individual setups
+
+To test a single setup script in isolation:
+
+```sh
+just testrun <NAME_OF_SETUP>
 ```
 
 ## Tool version management
