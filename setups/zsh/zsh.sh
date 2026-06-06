@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
-DOTPATH=${DOTPATH:-$HOME/dotfiles}
+THIS_DIR=${SETUPSPATH}/zsh
 
+log_info "Installing Oh My ZSH"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+log_success "Finished installing Oh My ZSH"
 
-ln -s ${DOTPATH}/setups/zsh/.zshrc  ${HOME}/.zshrc
-ln -s ${DOTPATH}/setups/zsh/.zprofile  ${HOME}/.zprofile
-ln -s ${DOTPATH}/setups/zsh/.zshenv  ${HOME}/.zshenv
+log_info "Installing ZSH configuration"
+ln -sf ${THIS_DIR}/.zshrc  ${HOME}/.zshrc
+ln -sf ${THIS_DIR}/.zprofile  ${HOME}/.zprofile
+ln -sf ${THIS_DIR}/.zshenv  ${HOME}/.zshenv
+log_success "Finished installing ZSH configuration"

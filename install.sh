@@ -69,3 +69,5 @@ $DOTPATH/setups/moom/moom.sh
 $DOTPATH/setups/vscode/vscode.sh
 $DOTPATH/setups/python/python.sh
 $DOTPATH/setups/macos/macos.sh
+
+ln -s ${DOTPATH}/.config ${HOME}/.config

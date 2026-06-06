@@ -1,8 +1,7 @@
-# Detect if running directly vs sourced
-if [[ "$ZSH_EVAL_CONTEXT" == "toplevel" ]]; then
-  DOTPATH="${HOME}/dotfiles"
-fi
+#!/usr/bin/env bash
 
+log_info "Running mise"
 mkdir -p "${HOME}/.config/mise"
 ln -sf ${DOTPATH}/mise/mise.toml ${HOME}/.config/mise/config.toml
 mise install
+log_success "Running mise"
