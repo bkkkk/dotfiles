@@ -61,7 +61,7 @@ if ! mas account &> /dev/null; then
   echo ""
   log_info "To sign in: System Settings > Media & Purchases > Sign In"
   echo ""
-  read -p "Are you signed into the App Store? (y/N) " -n 1 -r
+  read -rk1 "REPLY?Are you signed into the App Store? (y/N) "
   echo ""
   if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     log_warning "App Store apps will be skipped (install manually later)"
@@ -122,7 +122,7 @@ if [ -f "${BREWFILEPATH}" ]; then
   done < "${BREWFILEPATH}"
 
   # Count total items to install
-  total_items=$(grep -E '^(brew|cask|mas|vscode)' "$TEMP_BREWFILE" | wc -l | xargs)
+  total_items=$(/usr/bin/grep -E '^(brew|cask|mas|vscode)' "$TEMP_BREWFILE" | wc -l | xargs)
 
   log_info "Installing apps and tools from Brewfile"
   log_info "Queued: $total_items packages/apps to install"
