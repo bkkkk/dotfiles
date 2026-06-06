@@ -3,6 +3,7 @@ testrun setup:
     #!/usr/bin/env bash
     set -euo pipefail
     export DOTPATH="{{justfile_directory()}}"
+    export SETUPSPATH="${DOTPATH}/setups"
 
     RED='\033[0;31m'
     GREEN='\033[0;32m'
@@ -15,4 +16,4 @@ testrun setup:
     log_warning() { echo -e "${YELLOW}!${NC} $1"; }
     log_error()   { echo -e "${RED}✗${NC} $1"; }
 
-    source "${DOTPATH}/setups/{{setup}}/{{setup}}.sh"
+    source "${SETUPSPATH}/{{setup}}/{{setup}}.sh"

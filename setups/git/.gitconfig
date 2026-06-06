@@ -6,7 +6,7 @@
 
 [core]
     editor = subl -n -w
-    excludesfile = /Users/jacobo.blanco/.gitignore
+	excludesFile = /Users/jacoboblanco/.gitignore
     pager = delta
 
 [interactive]
