@@ -2,9 +2,9 @@
 export ZSH="${HOME}/.oh-my-zsh/"
 export VISUAL="subl"
 export DOTPATH="${HOME}/dotfiles"
-export LOCAL_EXPORTS="${HOME}/.exports.local.sh"
-export LOCAL_ALIASES="${HOME}/.aliases.local.sh"
-export LOCAL_FUNCTIONS="${HOME}/.functions.local.sh"
+export LOCAL_EXPORTS="${HOME}/.exports.sh"
+export LOCAL_ALIASES="${HOME}/.aliases.sh"
+export LOCAL_FUNCTIONS="${HOME}/.functions.sh"
 
 HIST_STAMPS="yyyy-mm-dd"
 
