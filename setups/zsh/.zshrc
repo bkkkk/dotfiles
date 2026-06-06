@@ -43,6 +43,8 @@ if [ -f $LOCAL_FUNCTIONS ]; then
     source $LOCAL_FUNCTIONS
 fi
 
+eval "$(mise activate zsh)"
+
 # Setup fzf config
 source <(fzf --zsh)
 
