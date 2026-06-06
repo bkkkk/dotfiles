@@ -39,4 +39,3 @@ mas "Numbers", id: 361304891
 mas "OmniFocus", id: 1542143627
 mas "Pages", id: 409201541
 mas "Xcode", id: 497799835
-cargo "imessage-exporter"
