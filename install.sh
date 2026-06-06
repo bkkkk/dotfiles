@@ -48,10 +48,10 @@ if [ ! -d "$DOTPATH" ]; then
 else
   echo "$DOTPATH already downloaded. Updating..."
   cd "$DOTPATH"
-  git stash
+  stash_result=$(git stash)
   git checkout main
   git pull origin main
-  git stash pop
+  [[ "$stash_result" != "No local changes to save" ]] && git stash pop
 fi
 
 cd "$DOTPATH"
@@ -61,14 +61,14 @@ log_info "Installing Command Line Tools"
 xcode-select -p &>/dev/null || xcode-select --install
 log_success "Command-line tools have been installed"
 
-$DOTPATH/setups/brew/brew.sh
-$DOTPATH/setups/zsh/zsh.sh
-$DOTPATH/setups/mise/mise.sh
-$DOTPATH/setups/git/git.sh
-$DOTPATH/setups/alfred/alfred.sh
-$DOTPATH/setups/moom/moom.sh
-$DOTPATH/setups/vscode/vscode.sh
-$DOTPATH/setups/macos/macos.sh
-$DOTPATH/setups/claude/claude.sh
+source $DOTPATH/setups/brew/brew.sh
+source $DOTPATH/setups/zsh/zsh.sh
+source $DOTPATH/setups/mise/mise.sh
+source $DOTPATH/setups/git/git.sh
+source $DOTPATH/setups/alfred/alfred.sh
+source $DOTPATH/setups/moom/moom.sh
+source $DOTPATH/setups/vscode/vscode.sh
+source $DOTPATH/setups/macos/macos.sh
+source $DOTPATH/setups/claude/claude.sh
 
 ln -sf ${DOTPATH}/.config ${HOME}/.config

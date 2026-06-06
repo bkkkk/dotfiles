@@ -2,7 +2,7 @@
 THIS_DIR=${SETUPSPATH}/zsh
 
 log_info "Installing Oh My ZSH"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 log_success "Finished installing Oh My ZSH"
 
 log_info "Installing ZSH configuration"
