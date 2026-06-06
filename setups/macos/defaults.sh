@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Sets default MacOS configuration
 sudo -v
 

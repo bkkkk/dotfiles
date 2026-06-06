@@ -5,4 +5,4 @@ fi
 
 mkdir -p "${HOME}/.config/mise"
 ln -sf ${DOTPATH}/mise/mise.toml ${HOME}/.config/mise/config.toml
-mise install 
+mise install
