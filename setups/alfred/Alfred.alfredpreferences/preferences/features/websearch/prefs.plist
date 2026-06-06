@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>9D0A1C54-91C6-46E3-B3F2-89316BCEE7CE</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>kagi</string>
+			<key>text</key>
+			<string>Search Kagi for '{query}'</string>
+			<key>url</key>
+			<string>https://kagi.com/search?token=cgDAbaczSAY.e-NFe_k20sgWe4hwV_S5Ws524APM46z5HFHEaN9uo04&amp;q={query}</string>
+		</dict>
+	</dict>
+	<key>onlyShowEnabledInPrefs</key>
+	<true/>
+</dict>
+</plist>

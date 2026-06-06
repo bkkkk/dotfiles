@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "{date:yyyyMMdd}",
+    "uid" : "AD5BA28A-1B87-4F4E-9CB2-AD3036A9A4DE",
+    "name" : "Ordinal Date",
+    "keyword" : "odate"
+  }
+}
