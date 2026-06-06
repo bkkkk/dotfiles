@@ -15,7 +15,7 @@ else
     echo ""
     log_warning "Some changes require restart to take effect"
     echo ""
-    read -rk1 "REPLY?Apply MacOS Default Config? (y/N) "
+    read -rn1 -p "Apply MacOS Default Config? (y/N) " REPLY
     echo ""
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         bash "${SETUPSPATH}/macos/defaults.sh"
