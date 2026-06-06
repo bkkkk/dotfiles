@@ -25,9 +25,10 @@ FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 source $ZSH/oh-my-zsh.sh
 
 # Shared Aliases/Exports
-source $DOTPATH/aliases.sh
-source $DOTPATH/exports.sh
-source $DOTPATH/functions.sh
+DOTPATH_ZSH=${DOTPATH}/setups/zsh
+source ${DOTPATH_ZSH}/aliases.sh
+source ${DOTPATH_ZSH}/exports.sh
+source ${DOTPATH_ZSH}/functions.sh
 
 # Local Aliases/Exports
 if [ -f $LOCAL_EXPORTS ]; then
