@@ -1,0 +1,139 @@
+[user]
+    name = Jacob Blanco
+    email = jayb88@gmail.com
+    username = bkkkk
+    signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/4OJpSi1atjqADsZgLpdRNhFSrrwWDclPdjQM8tSQRHnyFX7A6KwUL9UhJx8eHDz23MWLyvvto/XYWNhLNQwAEWByde9Cfn6UjuxQ2eg73DFrnQAlvt+6DMUqOuvqcMaNSR4W1WLk9blw3e7H119H/lRyXlVvf34tARzBQu4Hy+g+r3C4bbo/+jEseLLXu+zsYaUSaGhAPnQtaabL7QhcDs1O14x7g7b4pjseA/9KBsQ+OIyH17V7ewrlJ8gCzOnrb3xJ8CZTguO0sdcVq0h3sDU/HZvMGjJAsg3AbO5mdyuGcWMLs3FB9B5ubbm3JHT6kPahm6WiIdnRCeFRAs8C4QM+24ynmQVphXokeM1J6VW4tnbLQTeiedN8zdkftFMKTu9TtkCb0ODlluzCPR7qb9f/aZAuqpEIvVuJnGSMIoJGPxkzgEwrW6IOaJ6Few0bigoYSsqzqt9/YNohRUO7YDJD/jAgQpfGDRd9cuAtDrZNjRJVwkdLhNuZ8eXUyBoTarz+cLvu7a2RDTiwb/IdEtrsZUeoWxmlPqrqxkYImhHbzJFIt+uP4XZkzDvRz+ZggOs9pnEcIrpsjCioD6JOXfl9wBZvSwAoaNq12/1I07sIDSXQ9PktFrk+PmAf0zvGp6OEcrfGwfLDkAhu8sveFpyYo28/J4sgRC3RhJv53Q==
+
+[core]
+    editor = subl -n -w
+    excludesfile = /Users/jacobo.blanco/.gitignore
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[diff]
+    colorMoved = default
+
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+    navigate = true
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+
+[alias]
+    # Staging
+    a = add
+    aa = add --all
+    patch = add --patch
+
+    # Branch
+    br = branch
+    bd = branch -D
+    branch-name = rev-parse --abbrev-ref HEAD
+    repo-name = !"basename $(git rev-parse --show-toplevel)"
+    branch-diff = !"git diff $(git main-branch)...HEAD"
+    prod-diff = describe --tags --match 'v[0-9].[0-9].[0-9]*-production' --abbrev=0 HEAD
+
+    main-branch = !"git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
+
+    find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
+    show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
+
+    # Commit
+    c = commit
+    ca = commit -a
+    cm = commit -m
+    cam = commit -am
+    amend = commit --amend
+
+    # Checkout
+    co = switch
+    cb = switch -c
+
+    # Tags
+    t = tag
+    spray = !"git push --tags"
+    piece = !"git push --tags --force"
+
+    # Diff
+    d = diff --color-words
+    dc = diff --cached
+
+    # Push and Pull
+    yank = pull --force
+    shove = push --force
+    shake = !"git pull; git push;"
+
+    # Stash
+    st = stash
+    stp = stash pop
+
+    # Status/Logging
+    s = status
+    ss = status -sb
+    l = log --pretty
+    ld = log --pretty=format:'* %s (%an)'
+
+    lg = !"git lg1"
+    lg1 = !"git lg1-specific --all"
+    lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+    lg = lg1
+
+    # Reset
+    discard = checkout -- # Discard changes in Working Directory
+    unstage = reset HEAD -- # Move staged changes to Working Dir
+    undo = reset --soft HEAD~1 # Undo last commit (affects HEAD only)
+    destroy = reset --hard HEAD~1 # Remove last commit (from HEAD, Index and Working Dir)
+
+    # Remote
+    r = remote -v
+
+    # OneFlow
+    publish = "!git push"
+
+    jeb-branch = "!jeb_branch() { echo "jeb/$1/$(date +"%Y%m%d%H%M%S")/$2"; }; jeb_branch"
+
+    # Prep a new branch of work
+    feature = "!feature() { git pull; git checkout -b $(git jeb-branch feature $1); git publish; }; feature"
+    change = "!change() { git pull; git checkout -b $(git jeb-branch change $1); git publish; }; change"
+    fix = "!fix() { git pull; git checkout -b $(git jeb-branch fix $1); git publish; }; fix"
+    role = "!role() { git pull; git checkout -b $(git jeb-branch role $1); git publish; }; role"
+
+    # Close off a branch once things have gotten merged in GitHub
+    finish = !git checkout $(git main-branch) && git pull && gh poi
+
+    prw = !gh pr view -w
+    prv = !gh pr view -w
+[merge]
+    conflictstyle = diff3
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[pull]
+    rebase = false
+
+[help]
+    autocorrect = immediate
+[init]
+    defaultBranch = main
+[gpg]
+    format = ssh
+[gpg "ssh"]
+    program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+    gpgsign = true
+[tag]
+    sort = -v:refname
+[maintenance]
+	repo = /Users/jacobo.blanco/repos/datascience-flows
+[push]
+	autoSetupRemote = true

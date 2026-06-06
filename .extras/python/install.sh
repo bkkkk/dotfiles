@@ -1,0 +1,4 @@
+PYTHON_VERSION=3.10.7
+
+pyenv install $PYTHON_VERSION
+pyenv global $PYTHON_VERSION

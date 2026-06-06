@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "SELECT\n  pid,\n  usename,\n  query_start + '9 hours' AS query_start,\n  state,\n  query,\n  pg_blocking_pids(pid) AS blocked_by\nFROM pg_stat_activity\nWHERE backend_type = 'client backend'\n     AND state = 'active'\nORDER BY query_start;",
+    "uid" : "247551BD-1ECE-431E-9C93-BCB3A4435397",
+    "name" : "Running Query",
+    "keyword" : "stat"
+  }
+}

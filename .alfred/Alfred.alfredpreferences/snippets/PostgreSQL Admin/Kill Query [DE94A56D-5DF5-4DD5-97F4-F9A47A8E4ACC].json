@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "SELECT pg_terminate_backend({clipboard})",
+    "uid" : "DE94A56D-5DF5-4DD5-97F4-F9A47A8E4ACC",
+    "name" : "Kill Query",
+    "keyword" : "kill"
+  }
+}

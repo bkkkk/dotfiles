@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Personal Email",
+        "text": "jacobo.blanco@icloud.com",
+        "keyword": "me.email"
+    },
+    {
+        "name": "Home Address (Japanese)",
+        "text": "東京都練馬区豊玉北１−１０ー２ラフィネー２０５",
+        "keyword": "jp.home"
+    },
+    {
+        "name": "Home Address (English)",
+        "text": "1760012\nTokyo-to Nerima-ku\nToyotamakita1-10-2 Raffine 205\nJapan",
+        "keyword": "me.home"
+    },
+    {
+        "name": "Full Name (English)",
+        "text": "Jacobo Ezequiel Blanco",
+        "keyword": "me.full"
+    },
+    {
+        "name": "First Name (English)",
+        "text": "Jacobo",
+        "keyword": "me.first"
+    },
+    {
+        "name": "Last Name (English)",
+        "text": "Blanco",
+        "keyword": "me.last"
+    },
+    {
+        "name": "Full Name (Japanese)",
+        "text": "ジャコボ　エゼキエル　ブランコ",
+        "keyword": "jp.full"
+    },
+    {
+        "name": "First Name (Japanese)",
+        "text": "ジャコボ",
+        "keyword": "jp.first"
+    },
+    {
+        "name": "Last Name (Japanese)",
+        "text": "ブランコ",
+        "keyword": "jp.last"
+    },
+    {
+        "name": "Waiting for",
+        "text": "Waiting for ",
+        "keyword": ";wtf"
+    },
+    {
+        "name": "Post Code",
+        "text": "1760012",
+        "keyword": "me.code"
+    },
+    {
+        "name": "Phone Number",
+        "text": "08035668150",
+        "keyword": "me.ph"
+    }
+]

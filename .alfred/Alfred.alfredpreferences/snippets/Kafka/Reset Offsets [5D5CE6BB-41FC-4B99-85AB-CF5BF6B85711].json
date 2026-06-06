@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "kafka-consumer-groups --bootstrap-server 10.226.149.69:9092 --group {cursor} HERE --topic TOPIC_HERE --command-config \/opt\/kafka\/kafka.properties --reset-offsets --to-earliest --execute",
+    "uid" : "5D5CE6BB-41FC-4B99-85AB-CF5BF6B85711",
+    "name" : "Reset Offsets",
+    "keyword" : "reset"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "gcam \"{cursor}\"",
+    "uid" : "30CA4FE3-1296-4325-95B8-B5C9145A2A17",
+    "name" : "Git Commit All with Message",
+    "keyword" : "gcam"
+  }
+}
