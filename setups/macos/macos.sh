@@ -18,7 +18,7 @@ else
     read -rk1 "REPLY?Apply MacOS Default Config? (y/N) "
     echo ""
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        bash "${DOTPATH}/defaults.sh"
+        bash "${SETUPSPATH}/macos/defaults.sh"
         touch ~/.macos-defaults-applied
         log_success "macOS defaults configured"
     else

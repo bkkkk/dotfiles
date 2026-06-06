@@ -1,4 +1,4 @@
-export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
+export PKG_CONFIG_PATH="$(brew --prefix libxml2)/lib/pkgconfig"
 export LC_ALL=en_US.UTF-8
 export PYTHON_CONFIGURE_OPTS="--enable-framework"
 

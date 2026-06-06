@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 log_info "Setting up Visual Studio Code extensions"
 
 code --install-extension ms-python.python

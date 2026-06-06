@@ -6,7 +6,7 @@
 
 [core]
     editor = subl -n -w
-	excludesFile = /Users/jacoboblanco/.gitignore
+	excludesFile = ~/.gitignore
     pager = delta
 
 [interactive]
@@ -79,7 +79,6 @@
     l = log --pretty
     ld = log --pretty=format:'* %s (%an)'
 
-    lg = !"git lg1"
     lg1 = !"git lg1-specific --all"
     lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
     lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
@@ -133,7 +132,5 @@
     gpgsign = true
 [tag]
     sort = -v:refname
-[maintenance]
-	repo = /Users/jacobo.blanco/repos/datascience-flows
 [push]
 	autoSetupRemote = true

@@ -51,13 +51,14 @@ else
   git stash
   git checkout main
   git pull origin main
+  git stash pop
 fi
 
 cd "$DOTPATH"
 
 log_info "== Welcome! Setting up standard Jacob environment =="
 log_info "Installing Command Line Tools"
-xcode-select --install
+xcode-select -p &>/dev/null || xcode-select --install
 log_success "Command-line tools have been installed"
 
 $DOTPATH/setups/brew/brew.sh
@@ -67,7 +68,6 @@ $DOTPATH/setups/git/git.sh
 $DOTPATH/setups/alfred/alfred.sh
 $DOTPATH/setups/moom/moom.sh
 $DOTPATH/setups/vscode/vscode.sh
-$DOTPATH/setups/python/python.sh
 $DOTPATH/setups/macos/macos.sh
 
-ln -s ${DOTPATH}/.config ${HOME}/.config
+ln -sf ${DOTPATH}/.config ${HOME}/.config
