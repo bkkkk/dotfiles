@@ -2,6 +2,7 @@
 
 * We use 1Password for SSH/GPG signing credentials and it requires my fingerprint to authenticate. If that fails, stop and prompt me to commit myself.
 * NEVER BYPASS GPG SIGNING OF COMMITS!
+* When you're done with a task, always commit and push (if there's a remote).
 
 ## On working with task files
 
