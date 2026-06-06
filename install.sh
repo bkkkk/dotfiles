@@ -56,10 +56,7 @@ fi
 cd "$DOTPATH"
 
 $DOTPATH/setups/brew.sh
-
-log_info "Updating Homebrew (this may take a minute)..."
-brew update --quiet 2>&1 | grep -v "^Already up-to-date" || log_success "Homebrew updated"
-
+$DOTPATH/setups/mise.sh
 
 EXTRA_DIR=$HOME/.extras
 
@@ -71,29 +68,9 @@ log_info "Installing Command Line Tools"
 xcode-select --install
 log_success "Command-line tools have been installed"
 
-
-log_info "Installing Homebrew"
-if ! which brew > /dev/null; then
- # Install Homebrew 
- /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi;
-log_success "Homebrew has been installed"
-
-
-log_info "Installing applications in Brewfile"
-brew update & brew bundle --file $EXTRA_DIR || wait_on_error "Failed to install some Homebrew applications."
-log_success "Homebrew applications have been installed"
-
-
 log_info "Setting up Shell Config"
 $EXTRA_DIR/zsh/install.sh || error_exit "Failed to configure ZSH"
 log_success "ZSH config has been updated"
-
-
-log_info "Setting up Python3"
-uv python install 3.14 || error_exit "Failed to setup Python3 environment"
-uv python update-shell || error_exit "Failed to setup Python3 environment"
-log_success "Python3 environment has been setup"
 
 
 log_info "Setting up Applications"
