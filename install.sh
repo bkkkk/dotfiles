@@ -64,8 +64,8 @@ $DOTPATH/setups/brew/brew.sh
 $DOTPATH/setups/zsh/zsh.sh
 $DOTPATH/setups/mise/mise.sh
 $DOTPATH/setups/git/git.sh
+$DOTPATH/setups/alfred/alfred.sh
+$DOTPATH/setups/moom/moom.sh
+$DOTPATH/setups/vscode/vscode.sh
+$DOTPATH/setups/python/python.sh
 $DOTPATH/setups/macos/macos.sh
-
-log_info "Setting up Applications"
-$EXTRA_DIR/app_configs/install.sh || error_exit "Failed to configure applications"
-log_success "Additional application configuration has been set"
