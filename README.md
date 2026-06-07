@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.svg" width="160" alt="Jaybird logo"/>
+</p>
+
 # 🏠 Jacob's Dotfiles
 
 > *"A developer's dotfiles are a living autobiography of every tool they've rage-quit and every shortcut they've obsessed over."*

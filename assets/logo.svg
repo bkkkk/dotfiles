@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+
+  <!-- Orange background -->
+  <rect width="400" height="400" fill="#F97316" rx="64"/>
+
+  <!--
+    Blue Jay (Jaybird) silhouette, white, facing right, perched.
+    Path traces: beak tip → top of head → crest spike (backward) →
+    back of head → neck → back → rump → tail feathers → belly → breast → back to beak.
+  -->
+  <path fill="white" d="
+    M 302,162
+    C 290,148 274,140 260,137
+    C 253,135 249,128 248,117
+    C 247,105 250,91  254,79
+    C 256,71  259,66  263,70
+    C 266,74  263,85  258,99
+    C 253,113 244,127 231,141
+    C 216,156 198,170 180,189
+    C 162,208 146,231 132,257
+    C 119,281 110,309 106,333
+
+    C 116,319 129,306 140,306
+    C 150,306 154,319 150,333
+
+    C 154,321 162,309 172,309
+    C 182,309 187,321 184,333
+
+    C 190,319 198,309 212,306
+    C 230,303 252,296 270,283
+    C 288,269 300,251 307,233
+    C 313,217 313,201 309,187
+    C 307,179 304,171 302,162
+    Z
+  "/>
+
+  <!-- Eye: orange punch-out so it reads as an eye within the white silhouette -->
+  <circle cx="266" cy="151" r="7" fill="#F97316"/>
+
+</svg>
