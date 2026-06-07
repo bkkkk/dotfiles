@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 THISPATH=${SETUPSPATH}/claude
-CLAUDE_DIR=${HOME}/.claude
+CLAUDEPATH=${HOME}/.claude
 
 log_info "Setting up Claude configurations"
 
-mkdir -p "${CLAUDE_DIR}"
+mkdir -p "${CLAUDEPATH}"
 
 backup_and_link() {
     local src="$1"
@@ -18,9 +18,13 @@ backup_and_link() {
     ln -sf "$src" "$dest"
 }
 
-backup_and_link "${THISPATH}/CLAUDE.md"      "${CLAUDE_DIR}/CLAUDE.md"
-backup_and_link "${THISPATH}/settings.json"  "${CLAUDE_DIR}/settings.json"
-backup_and_link "${THISPATH}/commands"       "${CLAUDE_DIR}/commands"
-backup_and_link "${THISPATH}/agents"         "${CLAUDE_DIR}/agents"
+# TODO Add support of personal handmade Skills, right now we rely
+# on the automatic installation of skills from the marketplace.
+# but merging the two types is tricky so we're not doing that now
+backup_and_link "${THISPATH}/CLAUDE.md"      "${CLAUDEPATH}/CLAUDE.md"
+backup_and_link "${THISPATH}/settings.json"  "${CLAUDEPATH}/settings.json"
+backup_and_link "${THISPATH}/commands"       "${CLAUDEPATH}/commands"
+backup_and_link "${THISPATH}/agents"         "${CLAUDEPATH}/agents"
+backup_and_link "${THISPATH}/memory"         "${CLAUDEPATH}/memory"
 
 log_success "Finished setting up Claude configurations"

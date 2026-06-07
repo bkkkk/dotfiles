@@ -1,0 +1,1 @@
+- [NavigationSplitView min width broken by sidebarToggle removal](feedback_navigationsplitview_minwidth.md) — `.toolbar(removing: .sidebarToggle)` silently breaks column minimum width enforcement on macOS
