@@ -3,10 +3,12 @@
     "commit": "",
     "pr": ""
   },
-  "model": "opus",
+  "model": "sonnet[1m]",
   "enabledPlugins": {
-    "swift-lsp@claude-plugins-official": true,
+    "linear@claude-plugins-official": true,
     "swift-concurrency-pro@swift-concurrency-agent-skill": true,
+    "swift-lsp@claude-plugins-official": true,
+    "swift-lsp@claude-plugins-official": true,
     "swift-testing-pro@swift-testing-agent-skill": true,
     "swiftui-pro@skills-dir": false
   },
