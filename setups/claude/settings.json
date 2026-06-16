@@ -3,17 +3,27 @@
     "commit": "",
     "pr": ""
   },
+  "model": "opus",
   "enabledPlugins": {
-    "swift-lsp@claude-plugins-official": true
+    "swift-lsp@claude-plugins-official": true,
+    "swift-concurrency-pro@swift-concurrency-agent-skill": true,
+    "swift-testing-pro@swift-testing-agent-skill": true,
+    "swiftui-pro@skills-dir": false
   },
   "extraKnownMarketplaces": {
-    "xclaude-plugin-marketplace": {
+    "swift-concurrency-agent-skill": {
       "source": {
         "source": "github",
-        "repo": "conorluddy/xclaude-plugin"
-      },
-      "autoUpdate": true
+        "repo": "twostraws/Swift-Concurrency-Agent-Skill"
+      }
+    },
+    "swift-testing-agent-skill": {
+      "source": {
+        "source": "github",
+        "repo": "twostraws/Swift-Testing-Agent-Skill"
+      }
     }
   },
+  "agentPushNotifEnabled": true,
   "voiceEnabled": false
 }
