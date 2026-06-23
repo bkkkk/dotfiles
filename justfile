@@ -16,4 +16,15 @@ testrun setup:
     log_warning() { echo -e "${YELLOW}!${NC} $1"; }
     log_error()   { echo -e "${RED}✗${NC} $1"; }
 
+    if [[ ! -f "${SETUPSPATH}/{{setup}}/{{setup}}.sh" ]]; then
+        log_error "Setup '{{setup}}' not found."
+        echo ""
+        echo "Available setups:"
+        for dir in "${SETUPSPATH}"/*/; do
+            name="$(basename "$dir")"
+            [[ -f "${dir}${name}.sh" ]] && echo "  - ${name}"
+        done
+        exit 1
+    fi
+
     source "${SETUPSPATH}/{{setup}}/{{setup}}.sh"
