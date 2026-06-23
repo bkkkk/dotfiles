@@ -3,14 +3,14 @@
     "commit": "",
     "pr": ""
   },
-  "model": "sonnet[1m]",
+  "model": "sonnet",
   "enabledPlugins": {
     "linear@claude-plugins-official": true,
     "swift-concurrency-pro@swift-concurrency-agent-skill": true,
     "swift-lsp@claude-plugins-official": true,
-    "swift-lsp@claude-plugins-official": true,
     "swift-testing-pro@swift-testing-agent-skill": true,
-    "swiftui-pro@skills-dir": false
+    "swiftui-pro@skills-dir": false,
+    "swiftui-pro@swiftui-agent-skill": true
   },
   "extraKnownMarketplaces": {
     "swift-concurrency-agent-skill": {
@@ -23,6 +23,12 @@
       "source": {
         "source": "github",
         "repo": "twostraws/Swift-Testing-Agent-Skill"
+      }
+    },
+    "swiftui-agent-skill": {
+      "source": {
+        "source": "github",
+        "repo": "twostraws/SwiftUI-Agent-Skill"
       }
     }
   },
