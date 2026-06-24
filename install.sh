@@ -61,14 +61,16 @@ log_info "Installing Command Line Tools"
 xcode-select -p &>/dev/null || xcode-select --install
 log_success "Command-line tools have been installed"
 
-source $DOTPATH/setups/brew/brew.sh
-source $DOTPATH/setups/zsh/zsh.sh
-source $DOTPATH/setups/mise/mise.sh
-source $DOTPATH/setups/git/git.sh
-source $DOTPATH/setups/alfred/alfred.sh
-source $DOTPATH/setups/moom/moom.sh
-source $DOTPATH/setups/vscode/vscode.sh
-source $DOTPATH/setups/macos/macos.sh
-source $DOTPATH/setups/claude/claude.sh
+source $SETUPSPATH/brew/brew.sh
+source $SETUPSPATH/zsh/zsh.sh
+source $SETUPSPATH/mise/mise.sh
+source $SETUPSPATH/git/git.sh
+source $SETUPSPATH/alfred/alfred.sh
+source $SETUPSPATH/moom/moom.sh
+source $SETUPSPATH/vscode/vscode.sh
+source $SETUPSPATH/op/op.sh
+source $SETUPSPATH/ghostty/ghostty.sh
+source $SETUPSPATH/macos/macos.sh
+source $SETUPSPATH/claude/claude.sh
 
 ln -sf ${DOTPATH}/.config ${HOME}/.config
