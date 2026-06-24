@@ -15,7 +15,7 @@ backup_and_link() {
         mv "$dest" "${dest}.bak"
     fi
 
-    ln -sf "$src" "$dest"
+    ln -sfn "$src" "$dest"
 }
 
 # TODO Add support of personal handmade Skills, right now we rely
