@@ -3,14 +3,12 @@
     "commit": "",
     "pr": ""
   },
-  "model": "sonnet",
   "enabledPlugins": {
     "linear@claude-plugins-official": true,
     "swift-concurrency-pro@swift-concurrency-agent-skill": true,
     "swift-lsp@claude-plugins-official": true,
     "swift-testing-pro@swift-testing-agent-skill": true,
-    "swiftui-pro@skills-dir": false,
-    "swiftui-pro@swiftui-agent-skill": true
+    "python-architecture-review@rknall-custom-skills": true
   },
   "extraKnownMarketplaces": {
     "swift-concurrency-agent-skill": {
@@ -30,8 +28,15 @@
         "source": "github",
         "repo": "twostraws/SwiftUI-Agent-Skill"
       }
+    },
+    "rknall-custom-skills": {
+      "source": {
+        "source": "github",
+        "repo": "rknall/claude-skills"
+      }
     }
   },
+  "tui": "fullscreen",
   "agentPushNotifEnabled": true,
   "voiceEnabled": false
 }
