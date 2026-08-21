@@ -10,25 +10,35 @@ HIST_STAMPS="yyyy-mm-dd"
 
 fpath=(~/.completions/ $fpath)
 
-plugins=(
-    git
-    git-extras    
-    gh
-    macos
-    1password
-    terraform
-    direnv
-)
+# only load plugins if interactive shell
+if [[ -t 1 ]] then
+    plugins=(
+        git
+        git-extras    
+        gh
+        macos
+        terraform
+        direnv
+        1password
+    )
 
-FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
-source $ZSH/oh-my-zsh.sh
+    source $ZSH/oh-my-zsh.sh
+fi
+
+
 
 # Shared Aliases/Exports
 DOTPATH_ZSH=${DOTPATH}/setups/zsh
 source ${DOTPATH_ZSH}/aliases.sh
 source ${DOTPATH_ZSH}/exports.sh
 source ${DOTPATH_ZSH}/functions.sh
+
+if [[ -t 1 ]] && command -v op &>/dev/null; then
+  eval "$(op completion zsh)"
+  compdef _op op
+fi
 
 # Local Aliases/Exports
 if [ -f $LOCAL_EXPORTS ]; then
