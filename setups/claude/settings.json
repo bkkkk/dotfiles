@@ -3,40 +3,25 @@
     "commit": "",
     "pr": ""
   },
+  "model": "opus",
   "enabledPlugins": {
-    "linear@claude-plugins-official": true,
-    "swift-concurrency-pro@swift-concurrency-agent-skill": true,
-    "swift-lsp@claude-plugins-official": true,
-    "swift-testing-pro@swift-testing-agent-skill": true,
-    "python-architecture-review@rknall-custom-skills": true
+    "linear@claude-plugins-official": true
   },
-  "extraKnownMarketplaces": {
-    "swift-concurrency-agent-skill": {
-      "source": {
-        "source": "github",
-        "repo": "twostraws/Swift-Concurrency-Agent-Skill"
-      }
-    },
-    "swift-testing-agent-skill": {
-      "source": {
-        "source": "github",
-        "repo": "twostraws/Swift-Testing-Agent-Skill"
-      }
-    },
-    "swiftui-agent-skill": {
-      "source": {
-        "source": "github",
-        "repo": "twostraws/SwiftUI-Agent-Skill"
-      }
-    },
-    "rknall-custom-skills": {
-      "source": {
-        "source": "github",
-        "repo": "rknall/claude-skills"
-      }
+  "effortLevel": "medium",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "xhigh"
     }
   },
   "tui": "fullscreen",
   "agentPushNotifEnabled": true,
-  "voiceEnabled": false
+  "voiceEnabled": false,
+  "env": {
+    "GIT_CONFIG_GLOBAL": "/Users/jacoboblanco/dotfiles/setups/claude/agent.gitconfig"
+  },
+  "permissions": {
+    "deny": [
+      "Read(~/.ssh/agent_signing)"
+    ]
+  }
 }

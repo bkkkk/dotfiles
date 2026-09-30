@@ -40,3 +40,8 @@ Temporary Items
 
 **/.claude/settings.local.json
 *.html
+
+.jvmopts
+.sbtopts
+
+jay/
