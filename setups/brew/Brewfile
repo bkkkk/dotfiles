@@ -1,7 +1,3 @@
-tap "facebook/fb"
-tap "homebrew/bundle"
-tap "nikitabobko/tap"
-tap "sst/tap"
 brew "mise"
 brew "git"
 brew "mas"
