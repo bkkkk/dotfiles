@@ -1,0 +1,8 @@
+[include]
+      path = ~/.gitconfig
+[user]
+      signingkey = /Users/jacoboblanco/.ssh/agent_signing.pub
+[gpg "ssh"]
+      program = ssh-keygen
+[commit]
+      gpgsign = true
