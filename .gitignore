@@ -39,5 +39,5 @@ Temporary Items
 *.pyc
 
 # Don't track router configs
-gcp-router/host/com.jacob.gcp_router.json
+com.jacob.gcp_router.json
 
