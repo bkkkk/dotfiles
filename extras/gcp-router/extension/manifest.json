@@ -1,8 +1,15 @@
 {
   "manifest_version": 3,
   "name": "GCP Profile Router",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Sends GCP console links to the GCP Chrome profile.",
-  "permissions": ["webNavigation", "nativeMessaging", "tabs"],
-  "background": { "service_worker": "background.js" }
+  "permissions": [
+    "webNavigation",
+    "nativeMessaging",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv9MGKtdI58gVWqhj0FXlslofb6JMXfQgqLloIRChBHh8s6nTVTAN10DBC5geW3jqIocsfIdL4qwacg74PZ6eclPxf774bMLo4Okfq85WUPN6U0MzF5xhAl3OsyV4hGYVQfISHkFEPyZkJhuhmF1w7ukOwfmN6xscwOrpB/yyS+zZMrPETWeJo70DbrWQ5xOqheN9dXXinKPhXzYlKwE7K4HqbRWNVdXqlt5eBzoOqOGz9GvaXvJuEi7SYPTOwzPy9DAWZQLzCZ0DnDRvBt/p1e1MlpwekVv3cXoBDN6j1IEbn8S5sRu+2eK0bxkdXH6JKDIMFXTgGGO6efVJQQ+ndwIDAQAB"
 }
