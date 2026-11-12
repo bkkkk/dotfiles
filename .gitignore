@@ -37,3 +37,7 @@ Temporary Items
 # End of https://www.toptal.com/developers/gitignore/api/macos
 
 *.pyc
+
+# Don't track router configs
+gcp-router/host/com.jacob.gcp_router.json
+

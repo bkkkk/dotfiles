@@ -1,7 +1,0 @@
-{
-  "name": "com.jacob.gcp_router",
-  "description": "GCP Profile Router",
-  "path": "/Users/YOUR_USER/.local/bin/gcp_router.py",
-  "type": "stdio",
-  "allowed_origins": ["chrome-extension://YOUR_EXTENSION_ID/"]
-}
