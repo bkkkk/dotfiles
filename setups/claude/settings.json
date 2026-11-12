@@ -37,6 +37,5 @@
   },
   "tui": "fullscreen",
   "agentPushNotifEnabled": true,
-  "model": "sonnet",
-  "voiceEnabled": false,
+  "voiceEnabled": false
 }
