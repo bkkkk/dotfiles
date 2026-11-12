@@ -1,5 +1,11 @@
 // Hosts to route. Docs (cloud.google.com/docs) are NOT included on purpose.
-const HOSTS = ["console.cloud.google.com", "shell.cloud.google.com", "ssh.cloud.google.com"];
+const HOSTS = [
+  "console.cloud.google.com",
+  "shell.cloud.google.com",
+  "ssh.cloud.google.com",
+  // Composer QA
+  "ad7cd9f33f564fb5b3a81aad7ad909ef-dot-asia-northeast1.composer.googleusercontent.com"
+];
 
 chrome.webNavigation.onBeforeNavigate.addListener(
   async ({ tabId, frameId, url }) => {

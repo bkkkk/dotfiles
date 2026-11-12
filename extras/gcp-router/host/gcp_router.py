@@ -3,8 +3,13 @@
 import json, struct, subprocess, sys
 from urllib.parse import urlparse
 
-PROFILE_DIR = "Profile 2"  # folder name of your GCP profile (see README)
-ALLOWED = {"console.cloud.google.com", "shell.cloud.google.com", "ssh.cloud.google.com"}
+PROFILE_DIR = "Profile 6"  # folder name of your GCP profile (see README)
+ALLOWED = {
+    "console.cloud.google.com",
+    "shell.cloud.google.com",
+    "ssh.cloud.google.com",
+    "ad7cd9f33f564fb5b3a81aad7ad909ef-dot-asia-northeast1.composer.googleusercontent.com"
+}
 
 def main():
     raw = sys.stdin.buffer.read(4)
