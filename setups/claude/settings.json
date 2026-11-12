@@ -1,29 +1,42 @@
 {
+  "env": {
+    "GIT_CONFIG_GLOBAL": "/Users/jacoboblanco/dotfiles/setups/claude/agent.gitconfig"
+  },
   "attribution": {
     "commit": "",
     "pr": ""
   },
+  "permissions": {
+    "deny": [
+      "Read(~/.ssh/agent_signing)"
+    ]
+  },
   "model": "opus",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "^(startup|resume|clear|compact|fork)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/Users/jacoboblanco/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
   "enabledPlugins": {
     "linear@claude-plugins-official": true
   },
   "effortLevel": "medium",
   "modelSettings": {
     "claude-opus-5-5": {
-      "effortLevel": "xhigh"
+      "effortLevel": "medium"
     }
   },
   "tui": "fullscreen",
   "agentPushNotifEnabled": true,
-  "voiceEnabled": false,
   "model": "sonnet",
   "voiceEnabled": false,
-  "env": {
-    "GIT_CONFIG_GLOBAL": "/Users/jacoboblanco/dotfiles/setups/claude/agent.gitconfig"
-  },
-  "permissions": {
-    "deny": [
-      "Read(~/.ssh/agent_signing)"
-    ]
-  }
 }
