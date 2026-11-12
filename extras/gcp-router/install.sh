@@ -3,10 +3,12 @@
 #
 # Usage:
 #   ./install.sh --list-profiles
-#   ./install.sh --extension-id <ID> --profile "<Chrome profile name>"
+#   ./install.sh --profile "<Chrome profile name>" [--extension-id <ID>]
 set -euo pipefail
 
 HOST_NAME="com.jacob.gcp_router"
+# Fixed by the "key" field in extension/manifest.json.
+DEFAULT_EXT_ID="hcnhmfkeocefomogbomcmlchipofafen"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CHROME_DIR="${HOME}/Library/Application Support/Google/Chrome"
 LOCAL_STATE="${CHROME_DIR}/Local State"
@@ -41,7 +43,7 @@ print(matches[0])
 PY
 }
 
-EXT_ID=""
+EXT_ID="$DEFAULT_EXT_ID"
 PROFILE=""
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -51,7 +53,7 @@ while [[ $# -gt 0 ]]; do
     *) print_usage ;;
   esac
 done
-[[ -n "$EXT_ID" && -n "$PROFILE" ]] || print_usage
+[[ -n "$PROFILE" ]] || print_usage
 [[ "$EXT_ID" =~ ^[a-p]{32}$ ]] || { echo "Extension ID must be 32 letters a-p." >&2; exit 1; }
 [[ -f "$LOCAL_STATE" ]] || { echo "Chrome data not found at ${CHROME_DIR}." >&2; exit 1; }
 

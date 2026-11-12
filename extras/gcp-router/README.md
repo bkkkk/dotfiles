@@ -25,9 +25,9 @@ Do this in each profile that must **send** links (not in the GCP profile itself)
 1. Open `chrome://extensions`.
 2. Turn on **Developer mode**.
 3. Click **Load unpacked** and select the `extension/` folder.
-4. Copy the extension **ID** (32 letters).
+4. Check the extension **ID** is `hcnhmfkeocefomogbomcmlchipofafen`.
 
-The ID comes from the folder path. The same folder gives the same ID in every profile on one machine. A different path or machine gives a different ID.
+The `key` field in `extension/manifest.json` fixes the ID on every machine. It is a public key, so it is safe to commit. Chrome loads only one extension per ID: do not load a second copy of this folder.
 
 ### 2. Find the GCP profile
 
@@ -40,10 +40,10 @@ Output shows `<folder>: <display name>`, for example `Profile 6: Work GCP`.
 ### 3. Install the host
 
 ```sh
-./install.sh --extension-id <ID> --profile "Work GCP"
+./install.sh --profile "Work GCP"
 ```
 
-`--profile` accepts the display name or the folder name. The script:
+`--profile` accepts the display name or the folder name. `--extension-id <ID>` is optional: use it only for a copy of the extension without the `key` field. The script:
 
 * Copies `host/gcp_router.py` to `~/.local/bin/gcp_router.py` with `PROFILE_DIR` set to the chosen profile.
 * Writes `~/Library/Application Support/Google/Chrome/NativeMessagingHosts/com.jacob.gcp_router.json`, which allows only your extension ID.
@@ -59,7 +59,7 @@ Open `https://console.cloud.google.com` in a non-GCP profile. It must open in th
 If it loads in the current profile, the host failed. Open `chrome://extensions`, click **service worker** under the extension, and read the console error:
 
 * `Specified native messaging host not found` - the manifest is missing or Chrome was not restarted.
-* `Access to the specified native messaging host is forbidden` - extension ID mismatch. Run step 3 again with the correct ID.
+* `Access to the specified native messaging host is forbidden` - extension ID mismatch. Check the ID in `chrome://extensions`, then run step 3 again.
 * `Native host has exited` - the host script failed. Check `/usr/bin/python3` exists and the script is executable.
 
 ## Add a host
