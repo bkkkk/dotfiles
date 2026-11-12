@@ -59,8 +59,10 @@ done
 
 PROFILE_DIR="$(get_profile_dir "$PROFILE")"
 
-# Copy the host with the target profile folder set.
+# Copy the host with the target profile folder set. Remove the old file
+# first: if it is a symlink to the source, writing through it empties the source.
 mkdir -p "$(dirname "$HOST_DEST")"
+rm -f "$HOST_DEST"
 sed "s|^PROFILE_DIR = .*|PROFILE_DIR = \"${PROFILE_DIR}\"|" \
   "${SCRIPT_DIR}/host/gcp_router.py" > "$HOST_DEST"
 chmod 755 "$HOST_DEST"
