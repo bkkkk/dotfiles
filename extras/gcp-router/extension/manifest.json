@@ -1,0 +1,8 @@
+{
+  "manifest_version": 3,
+  "name": "GCP Profile Router",
+  "version": "1.0",
+  "description": "Sends GCP console links to the GCP Chrome profile.",
+  "permissions": ["webNavigation", "nativeMessaging"],
+  "background": { "service_worker": "background.js" }
+}

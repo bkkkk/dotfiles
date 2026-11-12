@@ -1,4 +1,5 @@
 export default {
+  logRequests: false,
   defaultBrowser: {
     name: "Google Chrome",
     profile: "Work",
@@ -10,10 +11,11 @@ export default {
         "console.cloud.google.com/*",
         "*.cloud.google.com/*",
         "shell.cloud.google.com/*",
+        "*.composer.googleusercontent.com/*"
       ],
       browser: {
         name: "Google Chrome",
-        profile: "Jacobo (panacloud.net)",
+        profile: "GCP",
       },
     },
   ],
